@@ -1,375 +1,1208 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>El Riesgo en tus Manos - Acción contra el BPA en Toluca</title>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,600;0,700;1,400&family=Barlow+Condensed:wght@500;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --ink: #0f0f0f;
-      --paper: #f5f0e8;
-      --amber: #e8930a;
-      --amber-light: #f5b942;
-      --red: #c0392b;
-      --white: #fafafa;
-    }
-    
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    
-    body {
-      background-color: var(--paper);
-      font-family: 'Barlow', sans-serif;
-      color: var(--ink);
-      line-height: 1.6;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El papel térmico de tu trabajo · Campaña de salud ocupacional para cajeras y cajeros</title>
+<meta name="description" content="El papel térmico de los tickets contiene químicos que pasan a la piel durante el turno. Lo que dice la ciencia sobre la exposición ocupacional a bisfenoles, sus efectos en la salud, y qué se puede hacer al respecto.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;0,9..144,900;1,9..144,400;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:        #ffffff;
+  --bg-alt:    #f5f4f2;
+  --paper:     #f4eddb;
+  --ink:       #161310;
+  --ink-soft:  #3d362c;
+  --mute:      #6b6353;
+  --accent:    #e83c18;
+  --accent-soft:#f05028;
+  --warn:      #be1808;
+  --good:      #3a6818;
+  --rule:      rgba(22,19,16,0.14);
+}
 
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      background: var(--paper);
-      box-shadow: 0 0 20px rgba(0,0,0,0.1);
-    }
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
 
-    /* ── HEADER ── */
-    header {
-      background: var(--ink);
-      padding: 40px 20px 30px;
-      text-align: left;
-    }
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:'Inter',sans-serif;
+  font-size:17.5px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
 
-    .eyebrow {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--amber);
-      display: block;
-      margin-bottom: 10px;
-    }
+::selection{background:var(--accent);color:var(--paper)}
 
-    h1 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 80px;
-      line-height: 0.9;
-      color: var(--white);
-      letter-spacing: 1px;
-      margin-bottom: 15px;
-    }
+.page{
+  max-width:920px;
+  margin:0 auto;
+  position:relative;
+  background:var(--bg);
+}
 
-    h1 span { color: var(--amber); }
+/* ============ HERO ============ */
+.hero{
+  padding:40px 50px 68px;
+  position:relative;
+  border-bottom:3px solid var(--accent);
+  background:var(--bg);
+  overflow:hidden;
+}
 
-    .subtitle-bar {
-      background: var(--amber);
-      padding: 12px 20px;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 700;
-      font-size: 18px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--ink);
-    }
+.hero::after{
+  content:"BPA";
+  position:absolute;
+  bottom:-28px;
+  right:-16px;
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:290px;
+  line-height:1;
+  color:rgba(232,60,24,0.07);
+  pointer-events:none;
+  z-index:0;
+  letter-spacing:-0.04em;
+  font-variation-settings:"opsz" 144;
+}
 
-    /* ── INTRO ── */
-    .intro {
-      background: var(--ink);
-      color: var(--white);
-      padding: 20px;
-      font-size: 18px;
-      font-style: italic;
-      border-bottom: 4px solid var(--amber);
-    }
-    .intro strong { color: var(--amber); font-style: normal; }
+.hero > *{position:relative;z-index:1}
 
-    /* ── CONTENT SECTIONS ── */
-    .section {
-      padding: 40px 20px;
-      border-bottom: 2px solid #ddd;
-    }
+.hero-bar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:11px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  font-weight:700;
+  color:var(--ink);
+  padding-bottom:18px;
+  margin-bottom:38px;
+  border-bottom:2px solid var(--accent);
+}
 
-    .section-label {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 700;
-      font-size: 14px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--amber);
-      border-bottom: 2px solid var(--amber);
-      padding-bottom: 5px;
-      margin-bottom: 20px;
-      display: inline-block;
-    }
+.hero-bar span:first-child{color:var(--accent)}
+.hero-bar span:nth-child(2){color:var(--mute);font-weight:600}
 
-    h2 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 40px;
-      line-height: 1.1;
-      margin-bottom: 15px;
-    }
+.hero-eyebrow{
+  font-size:12px;
+  letter-spacing:0.26em;
+  text-transform:uppercase;
+  font-weight:700;
+  color:var(--accent);
+  margin-bottom:26px;
+  display:block;
+  border-left:3px solid var(--accent);
+  padding-left:12px;
+}
 
-    p {
-      font-size: 16px;
-      margin-bottom: 15px;
-    }
+.hero h1{
+  font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-weight:900;
+  font-size:84px;
+  line-height:1.06;
+  letter-spacing:-0.022em;
+  margin-bottom:34px;
+  font-variation-settings:"opsz" 144;
+  max-width:840px;
+  color:var(--ink);
+}
 
-    /* ── STAT BOXES ── */
-    .stat-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 15px;
-      margin: 25px 0;
-    }
+.hero h1 .accent{color:var(--accent)}
+.hero h1 .italic{font-weight:700}
 
-    @media (min-width: 600px) {
-      .stat-grid { grid-template-columns: repeat(2, 1fr); }
-    }
+.hero-deck{
+  font-family:'Fraunces',serif;
+  font-size:23px;
+  font-weight:600;
+  line-height:1.38;
+  color:var(--ink-soft);
+  max-width:680px;
+  margin-bottom:36px;
+}
 
-    .stat-block {
-      background: var(--ink);
-      color: var(--white);
-      padding: 20px;
-      border-left: 5px solid var(--amber);
-    }
+.hero-stand{
+  font-size:17px;
+  line-height:1.65;
+  color:var(--ink-soft);
+  max-width:660px;
+  border-left:4px solid var(--accent);
+  padding:8px 0 8px 22px;
+}
 
-    .stat-num {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 50px;
-      color: var(--amber);
-      line-height: 1;
-      display: block;
-      margin-bottom: 10px;
-    }
+.hero-stand strong{
+  font-weight:700;
+  color:var(--ink);
+}
 
-    .stat-desc { font-size: 14px; }
+/* ============ SECTION SCAFFOLD ============ */
+section.block{
+  padding:64px 50px;
+  border-bottom:1px solid var(--rule);
+  position:relative;
+  background:var(--bg);
+}
 
-    /* ── WARNING BOX & BOSS BOX ── */
-    .warning-box {
-      background: #4a1010;
-      border-left: 6px solid var(--red);
-      padding: 20px;
-      margin: 25px 0;
-      color: #f0c0c0;
-    }
-    .warning-box strong { color: #ff8080; }
+section.block:last-of-type{border-bottom:none}
 
-    .boss-box {
-      background: #e9ecef;
-      border-left: 6px solid #4a5568;
-      padding: 20px;
-      margin: 25px 0;
-      color: #2d3748;
-    }
-    .boss-box h3 {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 22px;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-      color: #1a202c;
-    }
+.section-label{
+  display:inline-block;
+  font-size:11px;
+  letter-spacing:0.24em;
+  text-transform:uppercase;
+  font-weight:700;
+  color:var(--accent);
+  border-bottom:2px solid var(--accent);
+  padding-bottom:5px;
+  margin-bottom:24px;
+}
 
-    /* ── ACTION CARDS ── */
-    .action-section {
-      background: var(--ink);
-      color: var(--white);
-      padding: 40px 20px;
-      border-top: 4px solid var(--amber);
-    }
+section.block h2{
+  font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-weight:800;
+  font-size:48px;
+  line-height:1.08;
+  letter-spacing:-0.02em;
+  margin-bottom:30px;
+  max-width:760px;
+  color:var(--ink);
+}
 
-    .action-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 20px;
-      margin-top: 25px;
-    }
+section.block h2 em{
+  font-style:normal;
+  font-weight:800;
+  color:var(--accent);
+}
 
-    @media (min-width: 600px) {
-      .action-grid { grid-template-columns: repeat(2, 1fr); }
-    }
+section.block h3{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:25px;
+  line-height:1.25;
+  letter-spacing:-0.012em;
+  margin:44px 0 14px;
+  color:var(--ink);
+  max-width:660px;
+}
 
-    .action-card {
-      background: #1e1e1e;
-      border-top: 4px solid var(--amber);
-      padding: 20px;
-      position: relative;
-    }
+section.block h3:first-of-type{margin-top:6px}
 
-    .action-num {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 40px;
-      color: var(--amber);
-      opacity: 0.3;
-      position: absolute;
-      top: 10px;
-      right: 15px;
-    }
+section.block p{
+  margin-bottom:16px;
+  max-width:660px;
+  color:var(--ink-soft);
+}
 
-    .action-title {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 700;
-      font-size: 20px;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
+section.block p strong{
+  font-weight:700;
+  color:var(--ink);
+}
 
-    /* ── REFS ── */
-    .refs-section {
-      padding: 40px 20px;
-      background: #e2dfd8;
-    }
-    .refs-section h2 { font-size: 28px; }
-    .refs-list {
-      list-style: none;
-      font-size: 11px;
-      line-height: 1.4;
-      color: #444;
-    }
-    .refs-list li {
-      margin-bottom: 10px;
-      padding-left: 15px;
-      text-indent: -15px;
-    }
+.cite{
+  font-size:0.82em;
+  color:var(--mute);
+  font-weight:400;
+}
 
-    /* ── FOOTER ── */
-    footer {
-      background: var(--ink);
-      color: #666;
-      text-align: center;
-      padding: 20px;
-      font-family: 'Barlow Condensed', sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 12px;
-    }
-  </style>
+/* ============ STAT CALLOUT ============ */
+.stat-row{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:0;
+  margin:42px 0;
+  border-top:2px solid var(--accent);
+  border-bottom:1px solid var(--rule);
+}
+
+@media(min-width:680px){
+  .stat-row.two{grid-template-columns:1fr 1fr}
+  .stat-row.three{grid-template-columns:1fr 1fr 1fr}
+}
+
+.stat{
+  padding:28px 30px 28px 0;
+  border-right:1px solid var(--rule);
+}
+
+.stat:last-child{border-right:none;padding-right:0}
+
+@media(max-width:679px){
+  .stat{border-right:none;border-bottom:1px solid var(--rule);padding:24px 0}
+  .stat:last-child{border-bottom:none}
+}
+
+.stat-num{
+  font-family:'Inter',sans-serif;
+  font-weight:800;
+  font-size:88px;
+  line-height:0.95;
+  letter-spacing:-0.04em;
+  color:var(--accent);
+  font-variant-numeric:tabular-nums lining-nums;
+  display:block;
+  margin-bottom:12px;
+}
+
+.stat-num.medium{font-size:68px}
+.stat-num .unit{font-size:0.4em;font-weight:700;color:var(--ink-soft);letter-spacing:0;margin-left:4px}
+
+.stat-label{
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+  margin-bottom:8px;
+  display:block;
+}
+
+.stat-desc{
+  font-size:14.5px;
+  line-height:1.5;
+  color:var(--ink-soft);
+  margin-bottom:8px;
+  max-width:none;
+}
+
+.stat-desc strong{color:var(--ink)}
+
+.stat-source{
+  font-size:11px;
+  color:var(--mute);
+}
+
+/* ============ PULL QUOTE ============ */
+.pull{
+  font-family:'Inter',sans-serif;
+  font-style:normal;
+  font-weight:500;
+  font-size:26px;
+  line-height:1.4;
+  letter-spacing:-0.01em;
+  color:var(--ink);
+  border-top:4px solid var(--accent);
+  border-bottom:1px solid var(--rule);
+  padding:28px 0 24px;
+  margin:40px 0;
+  max-width:760px;
+}
+
+.pull-source{
+  font-style:normal;
+  font-family:'Inter',sans-serif;
+  font-size:11px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--mute);
+  font-weight:600;
+  margin-top:14px;
+}
+
+/* ============ DARK SIDE STRIP ============ */
+section.dark{
+  border-bottom:1px solid var(--rule);
+  border-left:4px solid var(--accent);
+  padding-left:46px;
+}
+
+section.dark h2 em{color:var(--accent)}
+
+/* ============ THERMAL EFFECT ============ */
+.thermal-strip{
+  height:10px;
+  background:repeating-linear-gradient(
+    90deg,
+    var(--accent) 0px, var(--accent) 2px,
+    transparent 2px, transparent 5px,
+    rgba(232,60,24,0.45) 5px, rgba(232,60,24,0.45) 7px,
+    transparent 7px, transparent 13px
+  );
+  opacity:0.85;
+}
+
+/* ============ DOMAIN BLOCK ============ */
+.domain{
+  margin:26px 0 8px;
+  padding-top:32px;
+  border-top:1px solid var(--rule);
+}
+
+.domain-tag{
+  display:inline-block;
+  font-size:11px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  font-weight:700;
+  background:rgba(22,19,16,0.06);
+  color:var(--ink-soft);
+  border:1px solid var(--rule);
+  padding:5px 11px;
+  border-radius:2px;
+  margin-bottom:12px;
+}
+
+.domain-tag.cashier{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+/* ============ WARN BLOCK ============ */
+.warn-block{
+  background:var(--bg);
+  color:var(--ink);
+  padding:28px 32px;
+  margin:40px 0;
+  border-left:6px solid var(--warn);
+  border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+  position:relative;
+}
+
+.warn-block::before{
+  content:"⚠";
+  position:absolute;
+  top:16px;
+  right:20px;
+  font-size:24px;
+  opacity:0.18;
+  color:var(--warn);
+  line-height:1;
+}
+
+.warn-block-tag{
+  display:inline-block;
+  font-size:10px;
+  letter-spacing:0.24em;
+  text-transform:uppercase;
+  font-weight:700;
+  color:var(--warn);
+  margin-bottom:12px;
+}
+
+.warn-block h4{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:24px;
+  line-height:1.25;
+  margin-bottom:12px;
+  color:var(--ink);
+  letter-spacing:-0.012em;
+}
+
+.warn-block p{
+  color:var(--ink-soft);
+  font-size:16px;
+  line-height:1.55;
+  max-width:none;
+  margin-bottom:10px;
+}
+
+.warn-block p:last-child{margin-bottom:0}
+.warn-block p strong{color:var(--ink)}
+
+.warn-block .cite-warn{
+  font-size:12px;
+  color:var(--mute);
+  margin-top:14px;
+  display:block;
+}
+
+/* ============ ACTION BLOCK ============ */
+section.actions{
+  padding:64px 50px;
+  border-bottom:1px solid var(--rule);
+  border-top:3px solid var(--accent);
+}
+
+section.actions p{max-width:680px;margin-bottom:18px}
+
+.protocol-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:20px;
+  margin-top:36px;
+}
+
+@media(min-width:680px){
+  .protocol-grid{grid-template-columns:1fr 1fr;gap:24px}
+}
+
+.protocol{
+  background:var(--bg-alt);
+  padding:30px 28px 28px;
+  border-top:3px solid var(--accent);
+  position:relative;
+  display:flex;
+  flex-direction:column;
+}
+
+.protocol-num{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:54px;
+  line-height:1;
+  color:var(--accent);
+  position:absolute;
+  top:18px;
+  right:22px;
+  opacity:0.25;
+  font-variation-settings:"opsz" 144;
+}
+
+.protocol h4{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:21px;
+  line-height:1.22;
+  margin-bottom:12px;
+  color:var(--ink);
+  max-width:78%;
+  letter-spacing:-0.012em;
+}
+
+.protocol p{
+  font-size:15px;
+  line-height:1.55;
+  color:var(--ink-soft);
+  margin-bottom:0;
+}
+
+.protocol p strong{color:var(--ink)}
+
+/* ============ MANAGEMENT BLOCK ============ */
+.mgmt{
+  background:var(--bg-alt);
+  padding:28px 32px;
+  margin:28px 0;
+  border-left:6px solid var(--accent);
+}
+
+.mgmt-tag{
+  display:inline-block;
+  font-size:10px;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  font-weight:700;
+  color:var(--accent);
+  margin-bottom:10px;
+}
+
+.mgmt h4{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:22px;
+  line-height:1.25;
+  margin-bottom:12px;
+  color:var(--ink);
+  letter-spacing:-0.012em;
+}
+
+.mgmt p{font-size:16px;line-height:1.6;max-width:none;color:var(--ink-soft)}
+.mgmt p:last-child{margin-bottom:0}
+.mgmt p strong{color:var(--ink)}
+
+/* ============ LABOR CASE BLOCK ============ */
+.labor-template{
+  background:var(--bg-alt);
+  padding:32px 36px;
+  margin:36px 0;
+  border-left:6px solid var(--accent);
+}
+
+.labor-tag{
+  display:inline-block;
+  font-size:10px;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  font-weight:700;
+  color:var(--accent);
+  margin-bottom:14px;
+}
+
+.labor-template h4{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:22px;
+  line-height:1.25;
+  margin-bottom:16px;
+  color:var(--ink);
+  letter-spacing:-0.012em;
+}
+
+.labor-template p{
+  font-size:18px;
+  line-height:1.55;
+  color:var(--ink-soft);
+  max-width:none;
+}
+
+.demands{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:22px;
+}
+
+.demand{
+  font-size:11px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  font-weight:700;
+  padding:7px 13px;
+  border-radius:2px;
+  background:var(--accent);
+  color:#fff;
+}
+
+.demand.outline-light{
+  background:transparent;
+  border:1px solid var(--rule);
+  color:var(--ink-soft);
+}
+
+/* ============ CLAIMS LISTS ============ */
+.claims{margin:34px 0}
+
+.claims-tag{
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  margin-bottom:18px;
+  padding-bottom:10px;
+  border-bottom:2px solid;
+  display:block;
+}
+
+.claims.solid .claims-tag{color:var(--good);border-color:var(--good)}
+.claims.careful .claims-tag{color:var(--accent-soft);border-color:var(--accent-soft)}
+.claims.over .claims-tag{color:#c83010;border-color:#c83010}
+
+.claim{
+  display:grid;
+  grid-template-columns:36px 1fr;
+  gap:14px;
+  margin-bottom:14px;
+  font-size:15.5px;
+  line-height:1.55;
+  align-items:start;
+  color:var(--ink-soft);
+}
+
+.claim-num{
+  font-family:'Fraunces',serif;
+  font-weight:800;
+  font-size:18px;
+  color:var(--mute);
+  font-variant-numeric:tabular-nums;
+}
+
+.claims.solid .claim-num{color:var(--good)}
+.claims.careful .claim-num{color:var(--accent-soft)}
+.claims.over .claim-num{color:#c83010}
+
+/* ============ INLINE STUDIES ============ */
+.studies{margin:24px 0}
+
+.study{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:6px;
+  padding:18px 0;
+  border-bottom:1px solid var(--rule);
+}
+
+@media(min-width:680px){
+  .study{grid-template-columns:240px 1fr;gap:30px;align-items:start}
+}
+
+.study:first-child{border-top:2px solid var(--accent)}
+
+.study-key{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:17px;
+  line-height:1.25;
+  color:var(--ink);
+}
+
+.study-key small{
+  display:block;
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:11px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:var(--mute);
+  margin-top:4px;
+}
+
+.study-text{
+  font-size:15.5px;
+  line-height:1.55;
+  color:var(--ink-soft);
+}
+
+/* ============ REFERENCES ============ */
+section.refs{
+  background:var(--paper);
+  padding:64px 50px;
+  border-bottom:none;
+}
+
+section.refs .section-label{color:#c43214;border-color:#c43214}
+
+section.refs h2{
+  font-family:'Fraunces',serif;
+  font-weight:800;
+  font-size:40px;
+  margin-bottom:8px;
+  letter-spacing:-0.025em;
+  color:var(--ink);
+}
+
+.refs-intro{
+  font-size:15.5px;
+  color:var(--ink-soft);
+  margin-bottom:32px;
+  max-width:680px;
+}
+
+.refs-list{
+  list-style:none;
+  font-size:13px;
+  line-height:1.5;
+  color:var(--ink-soft);
+  columns:1;
+  counter-reset:r;
+}
+
+@media(min-width:880px){
+  .refs-list{columns:2;column-gap:46px}
+}
+
+.refs-list li{
+  margin-bottom:12px;
+  padding-left:24px;
+  text-indent:-24px;
+  break-inside:avoid;
+  counter-increment:r;
+}
+
+.refs-list li::before{
+  content:counter(r) ".";
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  color:#c43214;
+  font-size:12px;
+  margin-right:8px;
+}
+
+.refs-list em{font-style:normal}
+
+/* ============ FOOTER ============ */
+.footer{
+  background:var(--bg-alt);
+  color:var(--mute);
+  padding:36px 50px;
+  font-size:13px;
+  line-height:1.6;
+  border-top:1px solid var(--rule);
+}
+
+.footer p{margin-bottom:10px;max-width:680px}
+.footer p:last-child{margin-bottom:0;color:var(--mute);font-size:11px;letter-spacing:0.06em}
+.footer strong{color:var(--ink-soft);font-weight:600}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:680px){
+  .hero{padding:28px 24px 46px}
+  .hero h1{font-size:46px;line-height:1.06}
+  .hero::after{font-size:180px;bottom:-18px}
+  .hero-deck{font-size:19px}
+  .hero-stand{font-size:16px}
+  section.block{padding:44px 24px}
+  section.block h2{font-size:34px}
+  section.block h3{font-size:22px}
+  section.actions{padding:44px 24px}
+  section.refs{padding:44px 24px}
+  .footer{padding:30px 24px}
+  .pull{font-size:22px}
+  .stat-num{font-size:62px}
+  .stat-num.medium{font-size:48px}
+  .warn-block{padding:22px 20px}
+  .warn-block h4{font-size:20px}
+  .mgmt{padding:22px 20px}
+  .labor-template{padding:22px 20px}
+  .protocol{padding:22px 22px 20px}
+  .protocol h4{font-size:18px}
+  section.dark{padding-left:20px}
+}
+</style>
 </head>
 <body>
+<article class="page">
 
-<div class="container">
-  <header>
-    <span class="eyebrow">⚠ Alerta de Salud Ocupacional</span>
-    <h1>EL <span>TICKET</span><br>TE ESTÁ<br>AFECTANDO</h1>
-  </header>
-
-  <div class="subtitle-bar">
-    Riesgos Metabólicos y Hormonales del Papel Térmico
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="hero-bar">
+    <span>Salud ocupacional</span>
+    <span>Cajeras y cajeros</span>
+    <span>Valle de Toluca</span>
   </div>
 
-  <div class="intro">
-    El manejo de recibos es una vía documentada de exposición ocupacional para los cajeros. Entra a tu cuerpo a través de la piel con solo tocarlo. Esto no es una teoría, está comprobado por biomonitoreos laborales.
-  </div>
+  <span class="hero-eyebrow">Campaña independiente · Bisfenoles en papel térmico</span>
 
-  <div class="section">
-    <span class="section-label">El Impacto Real en el Cuerpo</span>
-    <h2>Un químico que imita al estrógeno y daña el metabolismo</h2>
-    <p>El BPA actúa como un <strong>disruptor endocrino</strong> que engaña al sistema hormonal. Pero el daño va más allá de lo reproductivo: la evidencia humana más fuerte vincula la exposición al bisfenol con resistencia a la insulina, obesidad, adiposidad central y diabetes.</p>
-    <p>Peor aún, estudios directos en cajeros han asociado una mayor exposición dérmica al BPA con <strong>daño oxidativo en el ADN</strong>.</p>
+  <h1>El papel de tu trabajo <span class="italic">deja</span> <span class="accent">algo</span> en tu cuerpo.</h1>
 
-    <div class="stat-grid">
-      <div class="stat-block">
-        <span class="stat-num">85%</span>
-        <div class="stat-desc">De los recibos analizados en EE.UU. (2022) migraron a BPS, demostrando que la industria usa sustitutos igual de tóxicos.</div>
-      </div>
-      <div class="stat-block">
-        <span class="stat-num">0%</span>
-        <div class="stat-desc">Aumento de BPA en orina durante el turno <strong>si se usan guantes</strong>. La protección física funciona y es médicamente comprobable.</div>
-      </div>
+  <p class="hero-deck">El personal de cajas maneja papel térmico cientos de veces al día. Los químicos del papel pasan a la piel y entran al cuerpo durante el turno. No es una hipótesis. Se ha medido en cajeras y cajeros.</p>
+
+  <p class="hero-stand">Esta página reúne, para personal de cajas, supervisores, recursos humanos, comités de salud ocupacional y público en general, lo que la literatura científica documenta sobre la exposición laboral a bisfenoles desde papel térmico, sus efectos sobre la salud, y <strong>los argumentos sustentados en evidencia para plantear cambios en el lugar de trabajo</strong>.</p>
+</header>
+
+<!-- ============ 01 EXPOSICIÓN ============ -->
+<section class="block">
+  <span class="section-label">01 · Cómo entra al cuerpo</span>
+  <h2>El papel térmico no es solo papel.</h2>
+
+  <p>El papel de los tickets de caja contiene desarrolladores químicos en concentraciones medidas entre el <strong>1.2 y el 1.9 por ciento del peso del papel</strong> en muestras del mercado estadounidense. Aproximadamente un gramo de bisfenol por cada cien gramos de papel <span class="cite">Thayer y col., 2015</span>.</p>
+
+  <p>Al tomar un ticket, parte del químico se transfiere a la piel en segundos. Estudios con voluntarios humanos midieron la transferencia desde el papel hacia la piel, y desde la piel hacia el torrente sanguíneo, con permanencia más larga que cuando la exposición ocurre por vía oral <span class="cite">Biedermann y col., 2010; Sasso y col., 2020; Liu y Martin, 2017</span>.</p>
+
+  <h3>Niveles medidos en personal de cajas</h3>
+
+  <p>Investigadores en Francia compararon orina de 90 cajeras y 44 personas no expuestas. Estudios posteriores con BPS, el químico que reemplazó al BPA en una parte importante de los recibos, encontraron el mismo patrón.</p>
+
+  <div class="stat-row two">
+    <div class="stat">
+      <span class="stat-label">BPA en orina</span>
+      <span class="stat-num">8.92<span class="unit">µg/L</span></span>
+      <p class="stat-desc">Mediana en 90 cajeras francesas. La mediana en el grupo no expuesto fue de <strong>3.54 µg/L</strong>.</p>
+      <p class="stat-source">Ndaw y col., 2016</p>
+    </div>
+    <div class="stat">
+      <span class="stat-label">BPS en orina</span>
+      <span class="stat-num">2.53<span class="unit">µg/L</span></span>
+      <p class="stat-desc">Mediana en cajeros expuestos a recibos con BPS. La del grupo no expuesto fue de <strong>0.67 µg/L</strong>. La sustitución generó una nueva exposición ocupacional.</p>
+      <p class="stat-source">Ndaw y col., 2018</p>
     </div>
   </div>
 
-  <div class="section">
-    <span class="section-label">Para Gerencia y RRHH</span>
-    <h2>El Engaño del "Papel Libre de BPA"</h2>
-    
-    <div class="boss-box">
-      <h3>Si te dicen: "Nuestros tickets son seguros porque no tienen BPA"</h3>
-      <p>Están equivocados. La industria reemplazó masivamente el BPA por BPS. Mecánicamente, el BPS y otros sustitutos conservan actividades hormonales similares (estrogénicas y anti-androgénicas) y no resuelven el problema de la disrupción endocrina. Proporcionar guantes de nitrilo a los cajeros u ofrecer recibos digitales son mitigaciones de bajo costo frente a un riesgo de salud ocupacional comprobado.</p>
-    </div>
+  <h3>Evidencia con guantes: una intervención que sí modifica el resultado</h3>
 
-    <div class="warning-box">
-      <p><strong>⚠ EL GEL ANTIBACTERIAL ES UN AMPLIFICADOR.</strong><br>El uso de desinfectantes de manos altera la piel y extrae cantidades mucho mayores de bisfenoles del papel, provocando aumentos rápidos en suero y orina. Lávate con agua y jabón.</p>
+  <p>En Corea, un grupo de investigación dio seguimiento a 54 cajeras durante sus turnos. Midió BPA en orina antes y después. Sin guantes, los niveles aproximadamente se duplicaron durante la jornada. Cuando las mismas trabajadoras usaron guantes durante el turno, el aumento desapareció <span class="cite">Lee y col., 2018</span>.</p>
+
+  <div class="pull">
+    Cuando las cajeras usaron guantes durante el turno, el aumento de BPA en orina desapareció por completo.
+    <p class="pull-source">Lee y col., Environment International, 2018</p>
+  </div>
+
+  <p>El diseño es de intervención, no solo de correlación. Una modificación concreta en el procedimiento de trabajo, la barrera del guante, suprime el aumento del biomarcador medido en la orina al final del turno. La exposición no solo es medible: es modificable mediante una barrera física.</p>
+
+  <p>Datos de la encuesta poblacional NHANES en Estados Unidos refuerzan el cuadro. Las mujeres en ocupaciones que implican manejo de recibos presentan concentraciones urinarias de BPA mayores que mujeres en ocupaciones de baja exposición probable <span class="cite">Hehn, 2016</span>. Una revisión sistemática de biomonitoreos ocupacionales reúne evidencia consistente entre países <span class="cite">Bousoumah y col., 2021</span>.</p>
+</section>
+
+<!-- ============ 02 QUÉ HACE ============ -->
+<section class="block">
+  <span class="section-label">02 · Lo que hace en el cuerpo</span>
+  <h2>El BPA y el BPS <em>actúan como hormonas falsas</em>.</h2>
+
+  <p>El bisfenol A y sus sustitutos son alteradores hormonales, conocidos en la literatura científica como disruptores endocrinos. Se acoplan a los receptores que normalmente reconocen estrógenos y otras hormonas, y activan señales hormonales en momentos o cantidades inadecuados.</p>
+
+  <p>El efecto no se limita a la salud reproductiva. Hay evidencia humana en metabolismo del azúcar, peso corporal, presión arterial, desarrollo del feto y desarrollo neurológico de los hijos. Las cuatro áreas con evidencia humana más sólida se presentan a continuación, ordenadas de mayor a menor solidez epidemiológica.</p>
+
+  <!-- 2.1 metabolismo -->
+  <div class="domain">
+    <span class="domain-tag">Metabolismo, diabetes, obesidad</span>
+  </div>
+  <h3>Más bisfenol en el cuerpo, más resistencia a la insulina</h3>
+
+  <p>Análisis tempranos de la encuesta NHANES en Estados Unidos vincularon mayor BPA en orina con diagnóstico de diabetes y de enfermedad cardiovascular en adultos <span class="cite">Lang y col., 2008</span>. Un análisis posterior con la misma encuesta confirmó la asociación con diabetes <span class="cite">Shankar y Teppala, 2011</span>. Una revisión sistemática encontró asociaciones positivas reportadas de manera repetida para diabetes, obesidad, circunferencia de cintura elevada e hipertensión, en distintas poblaciones <span class="cite">LaKind y col., 2014; Rancière y col.</span>.</p>
+
+  <p>Un estudio francés reciente confirmó la asociación entre bisfenoles en orina y diabetes o prediabetes en adultos <span class="cite">Delépierre y col., 2023</span>. La preocupación se extendió al BPS. Estudios poblacionales en Estados Unidos y Corea encontraron asociación entre BPS en orina y obesidad, y entre BPS en orina y diabetes e hipertensión <span class="cite">Choi y col., 2021; Moreno-Gómez-Toledano y col., 2022</span>.</p>
+
+  <div class="pull">
+    Las asociaciones positivas se reportan repetidamente para diabetes, obesidad, circunferencia de cintura elevada e hipertensión.
+    <p class="pull-source">Síntesis de revisiones sistemáticas, LaKind y col., 2014</p>
+  </div>
+
+  <!-- 2.2 fertilidad -->
+  <div class="domain">
+    <span class="domain-tag">Fertilidad y salud reproductiva</span>
+  </div>
+  <h3>Menos óvulos, peor implantación, peor calidad seminal</h3>
+
+  <p>Una revisión publicada en 2014 que actualizó la evidencia sobre BPA y salud reproductiva concluyó que el BPA es un tóxico reproductivo. La toxicidad ovárica y uterina cuenta con apoyo experimental sólido. Los hallazgos en hombres son más heterogéneos <span class="cite">Peretz y col., 2014</span>.</p>
+
+  <p>Los datos más claros provienen de clínicas de reproducción asistida, donde se mide directamente la respuesta ovárica, la fecundación y la implantación. En el estudio de Ehrlich y colaboradores, las mujeres en el cuartil más alto de BPA en orina tuvieron <strong>una reducción del 24 por ciento en óvulos recuperados y del 27 por ciento en óvulos normalmente fecundados</strong> respecto a las del cuartil más bajo, en análisis ajustados <span class="cite">Ehrlich y col., 2012</span>. Un segundo trabajo del mismo grupo encontró un patrón dosis-respuesta entre BPA en orina y falla de implantación <span class="cite">Ehrlich y col., 2012</span>.</p>
+
+  <div class="stat-row two">
+    <div class="stat">
+      <span class="stat-label">Óvulos recuperados</span>
+      <span class="stat-num medium">−24%</span>
+      <p class="stat-desc">Cuartil más alto de BPA en orina frente al más bajo, en mujeres en tratamiento de reproducción asistida.</p>
+      <p class="stat-source">Ehrlich y col., Hum Reprod, 2012</p>
+    </div>
+    <div class="stat">
+      <span class="stat-label">Óvulos normalmente fecundados</span>
+      <span class="stat-num medium">−27%</span>
+      <p class="stat-desc">Mismo estudio, mismo contraste de cuartiles, ajustado por covariables.</p>
+      <p class="stat-source">Ehrlich y col., Hum Reprod, 2012</p>
     </div>
   </div>
 
-  <div class="action-section">
-    <span class="section-label" style="color: var(--amber-light); border-color: var(--amber-light);">Qué puedes hacer hoy</span>
-    <h2>Protocolos Prácticos</h2>
-    
-    <div class="action-grid">
-      <div class="action-card">
-        <span class="action-num">01</span>
-        <div class="action-title">Usa guantes de nitrilo</div>
-        <p>Un estudio demostró que el uso de guantes eliminó por completo el aumento de BPA en la orina durante un turno laboral.</p>
-      </div>
-      
-      <div class="action-card">
-        <span class="action-num">02</span>
-        <div class="action-title">Agua y Jabón</div>
-        <p>El jabón es la única barrera real. El gel antibacterial amplifica la absorción al abrir los poros.</p>
-      </div>
+  <p>Estudios recientes han encontrado que mayores concentraciones en orina <strong>tanto de BPA como de BPS</strong> se asocian con marcadores de reserva ovárica disminuida, incluido un menor nivel de hormona antimülleriana <span class="cite">Zhang N. y col., 2023; Park y col., 2020</span>. Esto coloca al BPS, el sustituto dominante en recibos, en el mismo grupo de inquietud.</p>
 
-      <div class="action-card">
-        <span class="action-num">03</span>
-        <div class="action-title">Manejo Cuidadoso</div>
-        <p>Sostén el ticket con dos dedos. Tiempos de manipulación prolongados exceden los límites teóricos de absorción de los modelos de riesgo.</p>
-      </div>
+  <p>En hombres, la situación tampoco es tranquilizadora. Un estudio con casi mil hombres de una clínica de infertilidad china encontró que tanto el BPA como el BPS se asociaron con peor calidad seminal. El BPS en particular se vinculó con menor motilidad espermática progresiva y total <span class="cite">Chen y col., 2022</span>. Estudios ocupacionales han reportado asociaciones entre exposición a BPA y disfunción sexual masculina autorreportada <span class="cite">Li D.-K. y col., 2010</span>.</p>
 
-      <div class="action-card" style="border-top-color: #4caf50;">
-        <span class="action-num" style="color: #4caf50;">04</span>
-        <div class="action-title">Derechos Laborales</div>
-        <p>Este sitio web contiene la base bibliográfica necesaria para sustentar un riesgo laboral real ante sindicatos y comités de salud.</p>
-      </div>
+  <!-- 2.3 embarazo -->
+  <div class="domain">
+    <span class="domain-tag">Embarazo y desarrollo de los hijos</span>
+  </div>
+  <h3>Lo que más debería preocupar a quien planea ser madre o padre</h3>
+
+  <p>Una proporción importante del personal de cajas son mujeres en edad reproductiva. La pregunta no se limita a los efectos sobre la salud propia. Incluye los efectos sobre embarazos futuros y sobre la salud de los hijos. Esta es la categoría con mayor peso en cualquier solicitud al lugar de trabajo.</p>
+
+  <p>Un metaanálisis publicado en 2021 encontró que las mujeres con concentraciones más altas de BPA en orina durante el embarazo tuvieron <strong>mayor probabilidad de parto prematuro y una duración del embarazo ligeramente menor</strong> <span class="cite">Namat y col., 2021</span>. Cohortes chinas con mediciones repetidas durante el embarazo replicaron el hallazgo y lo extendieron a mezclas de bisfenoles que incluyen BPA, BPF y BPS <span class="cite">Huang S. y col., 2019; Liang y col., 2021; Cantonwine y col., 2015</span>.</p>
+
+  <p>El estudio Generation R, en los Países Bajos, midió BPA en la orina de las mujeres embarazadas en distintas etapas. Aquellas con mayores concentraciones tuvieron hijos con <strong>menor peso fetal y menor crecimiento del perímetro cefálico</strong> <span class="cite">Snijder y col., 2013</span>. En un estudio chino con mediciones por trimestre, mayores concentraciones de BPA y BPF en orina de la madre se asociaron con menor longitud al nacer del bebé, y mayor BPS se asoció con menor edad gestacional <span class="cite">Yang y col., 2021</span>.</p>
+
+  <p>La distancia anogenital es un marcador del desarrollo del aparato reproductor masculino sensible a sustancias antiandrogénicas. La exposición ocupacional de la madre al BPA durante el embarazo se asoció con menor distancia anogenital en los hijos varones <span class="cite">Miao y col., 2011; Sun y col., 2018</span>.</p>
+
+  <h3>Y el desarrollo neurológico de los hijos</h3>
+
+  <p>Cohortes prospectivas en Estados Unidos, Canadá, Suecia y China han reportado de manera repetida que la exposición a bisfenoles durante el embarazo se asocia con problemas conductuales o de función ejecutiva en la infancia. La dirección por sexo varía entre cohortes, pero el patrón general apoya tratar la exposición durante el embarazo como una inquietud seria.</p>
+
+  <div class="studies">
+    <div class="study">
+      <div class="study-key">Estados Unidos<small>Braun y col., 2011 · 3 años</small></div>
+      <div class="study-text">Mayores concentraciones de BPA en orina de la madre durante el embarazo se asociaron con peores puntuaciones de conducta y función ejecutiva, con efectos más marcados en niñas.</div>
+    </div>
+    <div class="study">
+      <div class="study-key">Nueva York<small>Perera y col., 2012 · 3 a 5 años</small></div>
+      <div class="study-text">Alta exposición al BPA durante el embarazo se asoció con mayor reactividad emocional y agresividad en niños varones.</div>
+    </div>
+    <div class="study">
+      <div class="study-key">China<small>Jiang y col., 2019 · 2 años</small></div>
+      <div class="study-text">El BPS medido durante el embarazo se asoció con menores puntuaciones de desarrollo psicomotor. El BPA se asoció con menor desarrollo mental en una etapa específica del embarazo.</div>
+    </div>
+    <div class="study">
+      <div class="study-key">Suecia<small>Bornehag y col., 2021 · 7 años</small></div>
+      <div class="study-text">El BPF medido durante el embarazo, no el BPA ni el BPS en esta cohorte, se asoció con menor coeficiente intelectual a escala completa.</div>
+    </div>
+    <div class="study">
+      <div class="study-key">Síntesis sistemática<small>Ejaredar y col., 2017; Mustieles y col., 2015</small></div>
+      <div class="study-text">Revisiones sistemáticas concluyen que la exposición a BPA durante el embarazo se asocia repetidamente con problemas de conducta y función ejecutiva en la infancia.</div>
     </div>
   </div>
 
-  <div class="refs-section">
-    <span class="section-label" style="color: #666; border-color: #666;">Base de Evidencia Científica</span>
-    <h2>Referencias Bibliográficas</h2>
-    <ul class="refs-list">
-      <li>Bernier, M., & Vandenberg, L. N. (2017). Handling of thermal paper: Implications for dermal exposure to bisphenol A and its alternatives. PLoS ONE, 12.</li>
-      <li>Biedermann, S., Tschudin, P., & Grob, K. (2010). Transfer of bisphenol A from thermal printer paper to the skin. Analytical and Bioanalytical Chemistry, 398, 571–576.</li>
-      <li>Bousoumah, R., et al. (2021). Biomonitoring of occupational exposure to bisphenol A, bisphenol S and bisphenol F: A systematic review. The Science of the Total Environment, 783, 146905.</li>
-      <li>Caporossi, L., & Papaleo, B. (2017). Bisphenol A and Metabolic Diseases: Challenges for Occupational Medicine. International Journal of Environmental Research and Public Health, 14.</li>
-      <li>Choi, J., et al. (2021). Urinary bisphenol concentrations and its association with metabolic disorders in the US and Korean populations. Environmental Pollution, 118679.</li>
-      <li>Delépierre, J., et al. (2023). Relation of urinary bisphenol concentration and diabetes or prediabetes in French adults: A cross-sectional study. PLOS ONE, 18.</li>
-      <li>Dias, P., et al. (2022). The effects of bisphenols on the cardiovascular system. Critical Reviews in Toxicology, 52, 66–87.</li>
-      <li>Frankowski, R., et al. (2020). The presence of bisphenol A in the thermal paper in the face of changing European regulations - A comparative global research. Environmental Pollution, 265 Pt A, 114879.</li>
-      <li>Gorini, F., et al. (2020). Bisphenols as Environmental Triggers of Thyroid Dysfunction: Clues and Evidence. International Journal of Environmental Research and Public Health, 17.</li>
-      <li>Hehn, R. S. (2016). NHANES Data Support Link between Handling of Thermal Paper Receipts and Increased Urinary Bisphenol A Excretion. Environmental Science & Technology, 50 1, 397–404.</li>
-      <li>Hormann, A. M., et al. (2014). Holding Thermal Receipt Paper and Eating Food after Using Hand Sanitizer Results in High Serum Bioactive and Urine Total Levels of Bisphenol A (BPA). PLoS ONE, 9.</li>
-      <li>Karrer, C., et al. (2018). Physiologically Based Pharmacokinetic (PBPK) Modeling of the Bisphenols BPA, BPS, BPF, and BPAF with New Experimental Metabolic Parameters. Environmental Health Perspectives, 126.</li>
-      <li>Khmiri, I., et al. (2020). Toxicokinetics of bisphenol-S and its glucuronide in plasma and urine following oral and dermal exposure in volunteers. Environment International, 138, 105644.</li>
-      <li>Kim, M. J., & Park, Y. J. (2019). Bisphenols and Thyroid Hormone. Endocrinology and Metabolism, 34, 340–348.</li>
-      <li>LaKind, J., et al. (2014). Bisphenol A and indicators of obesity, glucose metabolism/type 2 diabetes and cardiovascular disease: A systematic review. Critical Reviews in Toxicology, 44, 121–150.</li>
-      <li>Lang, I., et al. (2008). Association of urinary bisphenol A concentration with medical disorders and laboratory abnormalities in adults. JAMA, 300 11, 1303–1310.</li>
-      <li>Lee, I., et al. (2018). Bisphenol A exposure through receipt handling and its association with insulin resistance among female cashiers. Environment International, 117, 268–275.</li>
-      <li>Liu, J., & Martin, J. W. (2017). Prolonged Exposure to Bisphenol A from Single Dermal Contact Events. Environmental Science & Technology, 51 17, 9940–9949.</li>
-      <li>Lv, Y., et al. (2017). Higher dermal exposure of cashiers to BPA and its association with DNA oxidative damage. Environment International, 98, 69–74.</li>
-      <li>Melzer, D., et al. (2010). Association of Urinary Bisphenol A Concentration with Heart Disease: Evidence from NHANES 2003/06. PLoS ONE, 5.</li>
-      <li>Meslin, M., et al. (2022). Human Biomonitoring Guidance Values (HBM-GVs) for Bisphenol S and Assessment of the Risk Due to the Exposure to Bisphenols A and S, in Europe. Toxics, 10.</li>
-      <li>Miao, M., et al. (2015). Associations between Bisphenol A Exposure and Reproductive Hormones among Female Workers. International Journal of Environmental Research and Public Health, 12, 13240–13250.</li>
-      <li>Miller, G. Z., et al. (2023). Bisphenols and alternative developers in thermal paper receipts from the U.S. market assessed by fourier transform infrared spectroscopy. Environmental Pollution, 122232.</li>
-      <li>Mínguez-Alarcón, L., et al. (2016). Effects of bisphenol A on male and couple reproductive health: a review. Fertility and Sterility, 106 4, 864–870.</li>
-      <li>Moreno-Gómez-Toledano, R., et al. (2022). Association between urinary concentrations of bisphenol A substitutes and diabetes in adults. World Journal of Diabetes, 13, 521–531.</li>
-      <li>Ndaw, S., et al. (2018). Occupational exposure of cashiers to bisphenol S via thermal paper. Toxicology Letters, 298, 106–111.</li>
-      <li>Ndaw, S., et al. (2016). Occupational exposure of cashiers to Bisphenol A via thermal paper: urinary biomonitoring study. International Archives of Occupational and Environmental Health, 89, 935–946.</li>
-      <li>Pei, Z., et al. (2025). The negative impacts of bisphenols on thyroid function in adults. Ecotoxicology and Environmental Safety, 290, 117790.</li>
-      <li>Rancière, F., et al. (n.d.). Bisphenol a and the Risk of Cardiometabolic Disorders: a Systematic Review. Environmental Health.</li>
-      <li>Reale, E., et al. (2020). Skin Absorption of Bisphenol A and Its Alternatives in Thermal Paper. Annals of Work Exposures and Health.</li>
-      <li>Rochester, J., & Bolden, A. (2015). Bisphenol S and F: A Systematic Review and Comparison of the Hormonal Activity of Bisphenol A Substitutes. Environmental Health Perspectives, 123, 643–650.</li>
-      <li>Sasso, A. F., et al. (2020). Pharmacokinetics of bisphenol A in humans following dermal administration. Environment International, 144, 106031.</li>
-      <li>Shankar, A., & Teppala, S. (2011). Relationship between urinary bisphenol A levels and diabetes mellitus. The Journal of Clinical Endocrinology and Metabolism, 96 12, 3822–3826.</li>
-      <li>Siracusa, J., et al. (2018). Effects of bisphenol A and its analogs on reproductive health: A mini review. Reproductive Toxicology, 79, 96–123.</li>
-      <li>Steffensen, I., et al. (2020). Bisphenols and Oxidative Stress Biomarkers. International Journal of Environmental Research and Public Health, 17.</li>
-      <li>Thayer, K., et al. (2015). Bisphenol A, Bisphenol S, and 4-Hydroxyphenyl 4-Isoprooxyphenylsulfone (BPSIP) in Urine and Blood of Cashiers. Environmental Health Perspectives, 124, 437–444.</li>
-      <li>Wang, F., et al. (2012). High urinary bisphenol A concentrations in workers and possible laboratory abnormalities. Occupational and Environmental Medicine, 69, 679–684.</li>
-    </ul>
+  <!-- 2.4 cajeros -->
+  <div class="domain">
+    <span class="domain-tag cashier">Hallazgos directos en personal de cajas</span>
+  </div>
+  <h3>Estudios específicos en cajeras y cajeros</h3>
+
+  <p>La literatura específica sobre la salud de cajeras y cajeros es todavía pequeña. Los estudios disponibles apuntan en la misma dirección que el resto de la literatura humana.</p>
+
+  <p>El mismo estudio coreano que mostró el efecto del uso de guantes encontró que las cajeras con mayor exposición a BPA tenían también <strong>mayor insulina en ayuno y mayor índice de resistencia a la insulina</strong>, el paso previo a la diabetes <span class="cite">Lee y col., 2018</span>. Un estudio chino encontró que mayor exposición dérmica al BPA en cajeros se asociaba con <strong>marcadores de daño oxidativo en el ADN</strong>, un indicio biológico temprano de los mecanismos por los que una exposición química puede derivar en enfermedad crónica <span class="cite">Lv y col., 2017</span>. Una revisión de medicina del trabajo concluye que la exposición ocupacional al BPA es con frecuencia mayor que la de la población general, y plantea que los efectos metabólicos merecen mayor atención en la vigilancia de la salud de los trabajadores <span class="cite">Caporossi y Papaleo, 2017</span>.</p>
+
+  <p>Los estudios específicos en personal de cajas no permiten todavía afirmar con certeza absoluta que el manejo de tickets haya causado en esta población una enfermedad concreta. Sí permiten afirmar que <strong>las cajeras y cajeros expuestos presentan biomarcadores tempranos coherentes con los efectos documentados para los bisfenoles en la literatura humana general</strong>.</p>
+</section>
+
+<!-- ============ 03 BPS MITO ============ -->
+<section class="block dark">
+  <span class="section-label">03 · El mito del libre de BPA</span>
+  <h2>Si dicen que el papel <em>ya no tiene BPA</em>, esa no es toda la historia.</h2>
+
+  <p>El argumento más común desde la gerencia o desde proveedores es que los recibos actuales son seguros porque son libres de BPA. La afirmación está incompleta. La industria reemplazó masivamente el BPA por BPS. El BPS no es una alternativa con seguridad demostrada.</p>
+
+  <h3>Lo que contienen los recibos en 2022</h3>
+
+  <p>Un análisis de 571 recibos del mercado estadounidense recolectados en 2022 encontró el siguiente patrón <span class="cite">Miller y col., 2023</span>:</p>
+
+  <div class="stat-row three">
+    <div class="stat">
+      <span class="stat-label">BPS</span>
+      <span class="stat-num medium">85%</span>
+      <p class="stat-desc">de los recibos analizados.</p>
+    </div>
+    <div class="stat">
+      <span class="stat-label">Pergafast 201</span>
+      <span class="stat-num medium">12%</span>
+      <p class="stat-desc">desarrollador alterno.</p>
+    </div>
+    <div class="stat">
+      <span class="stat-label">BPA</span>
+      <span class="stat-num medium">1%</span>
+      <p class="stat-desc">residual.</p>
+    </div>
   </div>
 
-  <footer>
-    Campaña de concientización científica independiente - Valle de Toluca, Estado de México
-  </footer>
-</div>
+  <h3>El BPS no es hormonalmente inerte</h3>
 
+  <p>Una revisión sistemática mostró que el BPS y el BPF tienen actividades hormonales en el mismo rango que el BPA, en sistemas estrogénicos, antiestrogénicos, androgénicos y antiandrogénicos. La conclusión: el BPS y el BPF son hormonalmente activos y pueden plantear riesgos similares a los del BPA <span class="cite">Rochester y Bolden, 2015</span>.</p>
+
+  <p>Revisiones posteriores específicas sobre alternativas comerciales encontraron que varios sustitutos, en particular BPS, BPAF y en menor medida BPF, presentan señales de toxicidad reproductiva y alteración endocrina <span class="cite">Braver-Sewradj y col., 2020; Pelch y col., 2019; Eladak y col., 2015</span>.</p>
+
+  <p>Un modelo farmacocinético predijo que, asumiendo exposiciones externas iguales, el BPS produciría las mayores concentraciones internas de bisfenol no conjugado entre los compuestos analizados <span class="cite">Karrer y col., 2018</span>. La forma no conjugada es la relevante para la actividad hormonal. Trabajos toxicocinéticos con voluntarios humanos encontraron diferencias entre la cinética del BPA y la del BPS, en dirección consistente con esa predicción <span class="cite">Khmiri y col., 2020; Reale y col., 2020</span>.</p>
+
+  <h3>El BPS ya tiene asociaciones documentadas en estudios humanos</h3>
+
+  <p>Las inquietudes sobre el BPS no se limitan a estudios in vitro. Existen ya estudios en humanos que cubren los mismos dominios que preocupan en el BPA. Reserva ovárica disminuida en mujeres de clínica de infertilidad <span class="cite">Zhang N. y col., 2023</span>. Menor motilidad espermática en hombres <span class="cite">Chen y col., 2022</span>. Menor desarrollo psicomotor a los dos años cuando hubo exposición durante el embarazo <span class="cite">Jiang y col., 2019</span>. Riesgo de parto prematuro <span class="cite">Liang y col., 2021; Aung y col., 2019</span>. Asociación con diabetes e hipertensión en adultos <span class="cite">Moreno-Gómez-Toledano y col., 2022</span>. El ejercicio europeo más reciente sobre valores de orientación de biomonitoreo concluyó que el riesgo ocupacional asociado al BPS no puede descartarse <span class="cite">Meslin y col., 2022</span>.</p>
+
+  <div class="pull">
+    Libre de BPA no significa libre de bisfenol, ni libre de actividad hormonal.
+  </div>
+</section>
+
+<!-- ============ 04 AMPLIFICADORES ============ -->
+<section class="block">
+  <span class="section-label">04 · Lo que amplifica el problema</span>
+  <h2>El gel antibacterial <em>aumenta</em> la absorción.</h2>
+
+  <p>Dos características del trabajo cotidiano en caja amplifican el efecto de la exposición.</p>
+
+  <h3>La exposición es repetida durante toda la jornada</h3>
+
+  <p>Los estudios en personal de cajas miden cambios asociados al turno completo, no a un contacto aislado. La exposición ocupacional relevante es acumulada. Observaciones del manejo real de tickets sugieren que el área de superficie y el tiempo de contacto en el trabajo cotidiano <strong>superan los supuestos que usan los modelos oficiales de evaluación de riesgo</strong> <span class="cite">Bernier y Vandenberg, 2017</span>. Los cálculos institucionales que afirman que la exposición es despreciable parten de supuestos que no reflejan las condiciones reales de trabajo en caja.</p>
+
+  <h3>El producto de higiene de manos modifica la absorción</h3>
+
+  <div class="warn-block">
+    <span class="warn-block-tag">Alerta · Gel desinfectante alcohólico</span>
+    <h4>Combinar gel antibacterial con manejo de tickets es un escenario de alta exposición.</h4>
+    <p>Un experimento humano controlado mostró que <strong>las manos humedecidas con gel desinfectante alcohólico extrajeron del papel térmico cantidades de BPA mucho mayores que las manos secas</strong>. La absorción a través de la piel se aceleró. Los niveles de BPA en suero y en orina aumentaron rápidamente.</p>
+    <p>El gel desinfectante altera la barrera natural de la piel y aumenta la transferencia de bisfenoles desde el papel hacia el cuerpo. Una persona que se aplicó gel antes de cobrar y luego comió o se tocó la cara, llevó al organismo más bisfenol del que habría llevado sin gel.</p>
+    <span class="cite-warn">Hormann y col., PLoS ONE, 2014</span>
+  </div>
+
+  <p>La recomendación que se desprende de la evidencia es directa. Después de manejar tickets, lavarse las manos con <strong>agua y jabón</strong>, no con gel. El gel no remueve el químico. Aumenta su absorción.</p>
+
+  <p>La exposición a través de la piel además tiene una huella biológica más larga que la exposición oral. Estudios con BPA marcado encontraron que un solo contacto cutáneo produce excreción urinaria prolongada durante días, y que la proporción de BPA libre en suero, la forma activa hormonalmente, es mayor por vía cutánea que por vía oral <span class="cite">Liu y Martin, 2017; Sasso y col., 2020</span>. Lo que entra por la piel se queda más tiempo y actúa más.</p>
+</section>
+
+<!-- ============ 05 ACCIONES ============ -->
+<section class="actions">
+  <span class="section-label">05 · Qué se puede hacer hoy</span>
+  <h2>Mientras se cambian las máquinas, <em>esto está al alcance del personal de cajas</em>.</h2>
+
+  <p>No todo depende de la empresa. Hay decisiones que pueden tomarse en el próximo turno y que la evidencia respalda. La barrera física entre piel y papel funciona. La elección del producto de higiene de manos importa. El registro de la exposición sirve si más adelante se necesita documentar el caso ante el médico, ante la empresa o ante un comité de salud y seguridad.</p>
+
+  <div class="protocol-grid">
+    <div class="protocol">
+      <span class="protocol-num">01</span>
+      <h4>Pedir guantes de nitrilo</h4>
+      <p>El estudio coreano con 54 cajeras mostró que el uso de guantes durante el turno <strong>eliminó por completo</strong> el aumento de BPA en orina. Es la medida con respaldo experimental más directo. El nitrilo es preferible al látex por menor permeabilidad.</p>
+    </div>
+    <div class="protocol">
+      <span class="protocol-num">02</span>
+      <h4>Agua y jabón, no gel antibacterial</h4>
+      <p>El gel alcohólico no es una alternativa segura tras manipular tickets térmicos. Aumenta la extracción del químico desde el papel y su absorción por la piel. Lavarse con agua y jabón antes de comer, beber o tocarse la cara.</p>
+    </div>
+    <div class="protocol">
+      <span class="protocol-num">03</span>
+      <h4>Sostener el ticket por un borde</h4>
+      <p>Reduce el área de contacto. Evitar arrugar, doblar o presionar el papel con la palma de la mano. El tiempo y el área de contacto entre piel y zona impresa son los factores que mide la literatura de exposición.</p>
+    </div>
+    <div class="protocol">
+      <span class="protocol-num">04</span>
+      <h4>Ofrecer recibo digital cuando sea posible</h4>
+      <p>Si la caja permite enviar el recibo por correo o por mensaje, ofrecerlo. Reduce el volumen de papel manipulado en el turno. Es una alternativa que muchos comercios ya operan.</p>
+    </div>
+    <div class="protocol">
+      <span class="protocol-num">05</span>
+      <h4>Lavarse las manos antes de comer o maquillarse</h4>
+      <p>Lo que entra por la piel también puede pasar de la mano a la boca o a los alimentos. Lavarse antes de tomar agua, comer o aplicar cosméticos durante la jornada.</p>
+    </div>
+    <div class="protocol">
+      <span class="protocol-num">06</span>
+      <h4>Llevar un registro</h4>
+      <p>Anotar las horas de turno, el número aproximado de tickets manejados al día y los años en el puesto. Esta información sirve para una conversación con el médico, con el sindicato o con el comité de salud y seguridad.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 06 SUPERVISORES ============ -->
+<section class="block">
+  <span class="section-label">06 · Para supervisores, recursos humanos y comités de salud</span>
+  <h2>Esto no se sostiene como argumento de empresa.</h2>
+
+  <p>La exposición ocupacional a bisfenoles desde papel térmico cumple los criterios que justifican una intervención preventiva en salud laboral. La fuente está identificada. La transferencia al cuerpo de la trabajadora está documentada. Existen mitigaciones de bajo costo con eficacia comprobada. Existen también sustitutos del papel térmico que eliminan la fuente.</p>
+
+  <p>A continuación, los argumentos que suelen oponerse cuando un trabajador o un comité plantea el cambio, y la respuesta sustentada en evidencia para cada uno.</p>
+
+  <div class="mgmt">
+    <span class="mgmt-tag">Argumento frecuente · 01</span>
+    <h4>"Nuestros recibos son seguros porque son libres de BPA."</h4>
+    <p>La afirmación está incompleta. La industria reemplazó masivamente el BPA por BPS y por desarrolladores como Pergafast 201. En 2022, en una muestra de 571 recibos del mercado estadounidense, el BPS estaba en el 85 por ciento de las muestras. La revisión sistemática de Rochester y Bolden mostró que el BPS tiene actividad hormonal en el mismo rango que el BPA. El modelo farmacocinético predice que el BPS puede generar mayor exposición interna no conjugada que el BPA tras una misma exposición externa. <strong>Libre de BPA no equivale a libre de bisfenoles, ni a ausencia de actividad hormonal.</strong></p>
+  </div>
+
+  <div class="mgmt">
+    <span class="mgmt-tag">Argumento frecuente · 02</span>
+    <h4>"La exposición a través de la piel es despreciable."</h4>
+    <p>La evidencia no apoya esta afirmación para el manejo ocupacional repetido. Estudios de biomonitoreo en personal de cajas encontraron concentraciones urinarias de BPA con mediana de 8.92 µg/L frente a 3.54 µg/L en controles, y para BPS de 2.53 frente a 0.67 µg/L. El estudio coreano demostró que el uso de guantes durante el turno <strong>eliminó por completo</strong> el aumento de BPA en orina asociado al manejo de tickets. La exposición ocupacional a través de la piel es mensurable, no marginal, y la barrera física funciona.</p>
+  </div>
+
+  <div class="mgmt">
+    <span class="mgmt-tag">Argumento frecuente · 03</span>
+    <h4>"No hay enfermedad probada en cajeros."</h4>
+    <p>La afirmación distingue mal entre causalidad probada y riesgo razonable que justifica precaución. La literatura específica en personal de cajas documenta indicios tempranos: asociación de BPA con resistencia a la insulina y con daño oxidativo en el ADN. La literatura humana más amplia documenta asociaciones repetidas con diabetes, obesidad, hipertensión, problemas de fertilidad y desarrollo neurológico infantil alterado tras exposición durante el embarazo. La medicina del trabajo opera con este nivel de evidencia para riesgos como el ruido o muchos disolventes. <strong>El estándar relevante es el riesgo ocupacional razonablemente sustentado, no la certidumbre epidemiológica absoluta.</strong></p>
+  </div>
+
+  <h3>Mitigaciones de bajo costo con respaldo de evidencia</h3>
+
+  <p>El uso de guantes de nitrilo durante el turno tiene respaldo experimental directo. Es una intervención con costo marginal por trabajador y eficacia comprobada para eliminar el aumento de bisfenol en orina asociado al turno. La transición parcial o total a recibos digitales por correo o mensaje reduce el volumen de papel térmico manipulado. La sustitución del papel térmico de bisfenol por papel térmico libre de bisfenol o por sistemas de impresión no térmica elimina la fuente. Existen ya proveedores comerciales con estas opciones.</p>
+
+  <p>La regulación europea restringió el uso de BPA en papel térmico a partir de 2020. Ejercicios europeos posteriores de derivación de valores de orientación de biomonitoreo humano para BPS concluyeron que el riesgo ocupacional para BPS no puede descartarse, y que el reemplazo no es una solución regulatoria suficiente <span class="cite">Meslin y col., 2022</span>. La tendencia regulatoria internacional no es confiar en sustituciones químicamente cercanas. Es eliminar la fuente.</p>
+</section>
+
+<!-- ============ 07 CASO LABORAL ============ -->
+<section class="block">
+  <span class="section-label">07 · Cómo plantear el caso laboral</span>
+  <h2>Una solicitud bien formulada <em>es difícil de descartar</em>.</h2>
+
+  <p>La diferencia entre una solicitud débil y una sólida no está en la intensidad emocional del lenguaje. Está en su precisión. La afirmación "los tickets pueden causar problemas de salud" tiene poco peso ante un departamento legal o de recursos humanos. Una solicitud que distingue las afirmaciones bien sustentadas de las que aún generan inquietud sin certeza, y que apoya cada una en literatura científica, es difícil de descartar.</p>
+
+  <p>Las afirmaciones siguientes se ajustan a las conclusiones de la evidencia revisada y pueden formar la base de un planteamiento en asamblea, en una conversación con superiores, en una reunión sindical o en una solicitud formal a un comité de salud y seguridad.</p>
+
+  <div class="claims solid">
+    <span class="claims-tag">Afirmaciones bien sustentadas</span>
+    <div class="claim"><span class="claim-num">01</span><div>El manejo de tickets térmicos es una vía documentada de exposición ocupacional a BPA y BPS para cajeras y cajeros.</div></div>
+    <div class="claim"><span class="claim-num">02</span><div>Los niveles de bisfenoles en el cuerpo aumentan durante el turno, y el uso de guantes elimina ese aumento.</div></div>
+    <div class="claim"><span class="claim-num">03</span><div>El BPS reemplazó masivamente al BPA en los recibos del mercado estadounidense, por lo que la etiqueta libre de BPA no elimina la exposición a bisfenoles.</div></div>
+    <div class="claim"><span class="claim-num">04</span><div>La evidencia humana más sólida vincula la exposición a bisfenoles con resistencia a la insulina, diabetes, obesidad y adiposidad central.</div></div>
+    <div class="claim"><span class="claim-num">05</span><div>El BPA es un tóxico reproductivo con apoyo experimental sólido y evidencia humana significativa, especialmente en estudios de reproducción asistida.</div></div>
+    <div class="claim"><span class="claim-num">06</span><div>La exposición a BPA durante el embarazo se ha asociado con parto prematuro, duración del embarazo acortada, alteraciones del crecimiento fetal y marcadores del desarrollo genital masculino.</div></div>
+    <div class="claim"><span class="claim-num">07</span><div>La exposición a BPA durante el embarazo se ha asociado de manera repetida con problemas de conducta y de función ejecutiva en la infancia, en cohortes prospectivas humanas.</div></div>
+    <div class="claim"><span class="claim-num">08</span><div>El BPS y otros sustitutos no pueden asumirse seguros. La evidencia mecanística y humana ya apunta a alteraciones hormonales y reproductivas.</div></div>
+  </div>
+
+  <div class="claims careful">
+    <span class="claims-tag">Afirmaciones que requieren formulación cuidadosa</span>
+    <div class="claim"><span class="claim-num">01</span><div>Afirmar que el BPA y el BPS pueden afectar la fertilidad de hombres y mujeres es defendible si se formula como asociación documentada, no como efecto universal demostrado, en particular para el BPS.</div></div>
+    <div class="claim"><span class="claim-num">02</span><div>Afirmar que la exposición durante el embarazo se ha vinculado con problemas de atención, conducta o desarrollo en los hijos es defendible si se reconoce que la literatura es heterogénea y a menudo varía según el sexo del niño.</div></div>
+    <div class="claim"><span class="claim-num">03</span><div>Las comparaciones cuantitativas directas BPA contra BPS deben formularse con cuidado. Las cinéticas, las vías de exposición y los desenlaces estudiados difieren entre estudios.</div></div>
+  </div>
+
+  <div class="claims over">
+    <span class="claims-tag">Afirmaciones que sobrepasan la evidencia</span>
+    <div class="claim"><span class="claim-num">01</span><div>"La exposición a tickets está demostrada como causa de infertilidad en cajeros." Esta afirmación rebasa lo que la literatura permite hoy.</div></div>
+    <div class="claim"><span class="claim-num">02</span><div>"El BPA o el BPS son causa probada de malformaciones congénitas en humanos." Existen asociaciones documentadas y estudios que generan inquietud, pero no certeza causal poblacional.</div></div>
+    <div class="claim"><span class="claim-num">03</span><div>"El BPA o el BPS son causa establecida de cáncer hormonal en humanos." La revisión sistemática más reciente concluye que la evidencia humana es insuficiente para inferir causalidad, aunque la plausibilidad mecanística existe <span class="cite">Prueitt y col., 2023</span>.</div></div>
+  </div>
+
+  <h3>Texto modelo para asamblea, sindicato o comité de salud</h3>
+
+  <div class="labor-template">
+    <span class="labor-tag">Plantilla · Adaptable a cada caso</span>
+    <h4>Cómo formular la solicitud</h4>
+    <p>"Llevo X años trabajando como cajera en esta empresa. Manejo aproximadamente Y tickets al día, en turnos de Z horas. La literatura científica documenta que el manejo de papel térmico es una vía ocupacional reconocida de exposición a bisfenoles, que estos compuestos entran al cuerpo a través de la piel durante el turno, y que se han asociado en estudios humanos con problemas metabólicos, reproductivos y del desarrollo infantil cuando hay exposición durante el embarazo. El reemplazo del BPA por BPS no resuelve el problema porque el BPS tiene actividad hormonal comparable. Solicito que la empresa adopte mitigaciones con respaldo de evidencia: provisión de guantes durante el turno, transición a recibos digitales o no térmicos, y exclusión del gel desinfectante alcohólico en el área de cajas. Aporto la base bibliográfica que sustenta cada uno de estos puntos."</p>
+    <div class="demands">
+      <span class="demand outline-light">Guantes de nitrilo provistos</span>
+      <span class="demand outline-light">Recibos digitales como opción</span>
+      <span class="demand outline-light">Papel sin bisfenol o impresión no térmica</span>
+      <span class="demand outline-light">Agua y jabón, no gel, en el área de cajas</span>
+      <span class="demand outline-light">Vigilancia médica con marcadores metabólicos</span>
+    </div>
+  </div>
+
+  <p>La pregunta correcta no es si el BPA o el BPS están demostrados como causa de una enfermedad concreta en personal de cajas. En términos de prueba poblacional definitiva, la respuesta es todavía no. La pregunta correcta es esta: <strong>frente a un riesgo ocupacional documentado, prevenible y con mitigaciones de bajo costo, ¿qué argumento tiene la empresa para no actuar?</strong></p>
+</section>
+
+<!-- ============ REFERENCIAS ============ -->
+<section class="refs" id="referencias">
+  <span class="section-label">08 · Bibliografía</span>
+  <h2>Referencias</h2>
+  <p class="refs-intro">Listado completo de los trabajos científicos citados en el cuerpo del documento. Incluye estudios primarios, revisiones sistemáticas y metaanálisis sobre exposición ocupacional, toxicología y desenlaces en salud humana.</p>
+
+  <ol class="refs-list">
+    <li>Ao, J., Huo, X., Zhang, J., y col. (2021). Environmental exposure to bisphenol analogues and unexplained recurrent miscarriage: A case-control study. <em>Environmental Research</em>, 112293.</li>
+    <li>Aung, M., Ferguson, K., Cantonwine, D., y col. (2019). Preterm birth in relation to the bisphenol A replacement, bisphenol S, and other phenols and parabens. <em>Environmental Research</em>, 169, 131–138.</li>
+    <li>Bernier, M., y Vandenberg, L. N. (2017). Handling of thermal paper: Implications for dermal exposure to bisphenol A and its alternatives. <em>PLoS ONE</em>, 12.</li>
+    <li>Biedermann, S., Tschudin, P., y Grob, K. (2010). Transfer of bisphenol A from thermal printer paper to the skin. <em>Analytical and Bioanalytical Chemistry</em>, 398, 571–576.</li>
+    <li>Bornehag, C., Engdahl, E., Hallerbäck, M. U., y col. (2021). Prenatal exposure to bisphenols and cognitive function in children at 7 years of age in the Swedish SELMA study. <em>Environment International</em>, 106433.</li>
+    <li>Bousoumah, R., Leso, V., Iavicoli, I., y col. (2021). Biomonitoring of occupational exposure to bisphenol A, bisphenol S and bisphenol F: A systematic review. <em>Science of the Total Environment</em>, 783, 146905.</li>
+    <li>Braun, J., Kalkbrenner, A., Calafat, A., y col. (2011). Impact of Early-Life Bisphenol A Exposure on Behavior and Executive Function in Children. <em>Pediatrics</em>, 128, 873–882.</li>
+    <li>Braver-Sewradj, S. P. den, Spronsen, R. van, y Hessel, E. (2020). Substitution of bisphenol A: a review of the carcinogenicity, reproductive toxicity, and endocrine disruption potential of alternative substances. <em>Critical Reviews in Toxicology</em>, 50, 128–147.</li>
+    <li>Cantonwine, D., Ferguson, K., Mukherjee, B., y col. (2015). Urinary Bisphenol A Levels during Pregnancy and Risk of Preterm Birth. <em>Environmental Health Perspectives</em>, 123, 895–901.</li>
+    <li>Caporossi, L., y Papaleo, B. (2017). Bisphenol A and Metabolic Diseases: Challenges for Occupational Medicine. <em>International Journal of Environmental Research and Public Health</em>, 14.</li>
+    <li>Chen, P.-P., Liu, C., Zhang, M., y col. (2022). Associations between urinary bisphenol A and its analogues and semen quality. <em>Environment International</em>, 161, 107132.</li>
+    <li>Choi, J., Lee, J., Huh, D., y Moon, K. (2021). Urinary bisphenol concentrations and its association with metabolic disorders in the US and Korean populations. <em>Environmental Pollution</em>, 118679.</li>
+    <li>Delépierre, J., Fosse-Edorh, S., Fillol, C., y Piffaretti, C. (2023). Relation of urinary bisphenol concentration and diabetes or prediabetes in French adults. <em>PLOS ONE</em>, 18.</li>
+    <li>Dias, P., Tvdrý, V., Jirkovský, E., y col. (2022). The effects of bisphenols on the cardiovascular system. <em>Critical Reviews in Toxicology</em>, 52, 66–87.</li>
+    <li>Ehrlich, S., Williams, P. L., Missmer, S., y col. (2012). Urinary bisphenol A concentrations and early reproductive health outcomes among women undergoing IVF. <em>Human Reproduction</em>, 27, 3583–3592.</li>
+    <li>Ehrlich, S., Williams, P. L., Missmer, S., y col. (2012). Urinary Bisphenol A Concentrations and Implantation Failure among Women Undergoing in Vitro Fertilization. <em>Environmental Health Perspectives</em>, 120, 978–983.</li>
+    <li>Ejaredar, M., Lee, Y., Roberts, D., y col. (2017). Bisphenol A exposure and children's behavior: A systematic review. <em>Journal of Exposure Science and Environmental Epidemiology</em>, 27, 175–183.</li>
+    <li>Eladak, S., Grisin, T., Moison, D., y col. (2015). A new chapter in the bisphenol A story: bisphenol S and bisphenol F are not safe alternatives. <em>Fertility and Sterility</em>, 103, 11–21.</li>
+    <li>Frankowski, R., Zgoła-Grześkowiak, A., Grześkowiak, T., y Sójka, K. (2020). The presence of bisphenol A in the thermal paper in the face of changing European regulations. <em>Environmental Pollution</em>, 265, 114879.</li>
+    <li>Gerona, R., Pan, J., Zota, A., y col. (2016). Direct measurement of Bisphenol A, BPA glucuronide and BPA sulfate in a diverse and low-income population of pregnant women. <em>Environmental Health</em>, 15.</li>
+    <li>Gorini, F., Bustaffa, E., Coi, A., y col. (2020). Bisphenols as Environmental Triggers of Thyroid Dysfunction. <em>International Journal of Environmental Research and Public Health</em>, 17.</li>
+    <li>Guo, J., Liu, K., Yang, J., y Su, Y. (2023). Prenatal exposure to bisphenol A and neonatal health outcomes: A systematic review. <em>Environmental Pollution</em>, 122295.</li>
+    <li>Hehn, R. S. (2016). NHANES Data Support Link between Handling of Thermal Paper Receipts and Increased Urinary Bisphenol A Excretion. <em>Environmental Science and Technology</em>, 50, 397–404.</li>
+    <li>Hormann, A. M., vom Saal, F., Nagel, S., y col. (2014). Holding Thermal Receipt Paper and Eating Food after Using Hand Sanitizer Results in High Serum Bioactive and Urine Total Levels of BPA. <em>PLoS ONE</em>, 9.</li>
+    <li>Huang, S., Li, J., Xu, S., y col. (2019). Bisphenol A and bisphenol S exposures during pregnancy and gestational age. <em>Chemosphere</em>, 237, 124426.</li>
+    <li>Jiang, Y., Li, J., Xu, S., y col. (2019). Prenatal exposure to bisphenol A and its alternatives and child neurodevelopment at 2 years. <em>Journal of Hazardous Materials</em>, 121774.</li>
+    <li>Karrer, C., Roiss, T., von Goetz, N., y col. (2018). Physiologically Based Pharmacokinetic Modeling of the Bisphenols BPA, BPS, BPF, and BPAF. <em>Environmental Health Perspectives</em>, 126.</li>
+    <li>Khmiri, I., Côté, J., Mantha, M., y col. (2020). Toxicokinetics of bisphenol-S and its glucuronide in plasma and urine following oral and dermal exposure. <em>Environment International</em>, 138, 105644.</li>
+    <li>Kim, M. J., y Park, Y. J. (2019). Bisphenols and Thyroid Hormone. <em>Endocrinology and Metabolism</em>, 34, 340–348.</li>
+    <li>LaKind, J., Goodman, M., y Mattison, D. (2014). Bisphenol A and indicators of obesity, glucose metabolism/type 2 diabetes and cardiovascular disease: A systematic review. <em>Critical Reviews in Toxicology</em>, 44, 121–150.</li>
+    <li>Lang, I., Galloway, T., Scarlett, A., y col. (2008). Association of urinary bisphenol A concentration with medical disorders and laboratory abnormalities in adults. <em>JAMA</em>, 300, 1303–1310.</li>
+    <li>Lee, I., Kim, S., Kim, K.-T., y col. (2018). Bisphenol A exposure through receipt handling and its association with insulin resistance among female cashiers. <em>Environment International</em>, 117, 268–275.</li>
+    <li>Li, D., Zhou, Z., Miao, M., y col. (2010). Relationship between urine bisphenol-A level and declining male sexual function. <em>Journal of Andrology</em>, 31, 500–506.</li>
+    <li>Li, D.-K., Zhou, Z., Qing, D., y col. (2010). Occupational exposure to bisphenol-A and the risk of self-reported male sexual dysfunction. <em>Human Reproduction</em>, 25, 519–527.</li>
+    <li>Li, J., Wu, C., Zhao, H., y col. (2019). Exposure assessment of bisphenols in Chinese women during pregnancy: a longitudinal study. <em>Environmental Science and Technology</em>.</li>
+    <li>Liang, J., Yang, C., Liu, T., y col. (2021). Prenatal exposure to bisphenols and risk of preterm birth: Findings from Guangxi Zhuang birth cohort. <em>Ecotoxicology and Environmental Safety</em>, 228, 112960.</li>
+    <li>Liu, J., y Martin, J. W. (2017). Prolonged Exposure to Bisphenol A from Single Dermal Contact Events. <em>Environmental Science and Technology</em>, 51, 9940–9949.</li>
+    <li>Lv, Y., Lu, S., Dai, Y., y col. (2017). Higher dermal exposure of cashiers to BPA and its association with DNA oxidative damage. <em>Environment International</em>, 98, 69–74.</li>
+    <li>Meeker, J., Ehrlich, S., Toth, T., y col. (2010). Semen quality and sperm DNA damage in relation to urinary bisphenol A among men from an infertility clinic. <em>Reproductive Toxicology</em>, 30, 532–539.</li>
+    <li>Melzer, D., Rice, N., Lewis, C., y col. (2010). Association of Urinary Bisphenol A Concentration with Heart Disease: Evidence from NHANES 2003/06. <em>PLoS ONE</em>, 5.</li>
+    <li>Meslin, M., Beausoleil, C., Zeman, F., y col. (2022). Human Biomonitoring Guidance Values for Bisphenol S and Assessment of the Risk Due to the Exposure to Bisphenols A and S, in Europe. <em>Toxics</em>, 10.</li>
+    <li>Miao, M., Yuan, W., He, Y., y col. (2011). In utero exposure to bisphenol-A and anogenital distance of male offspring. <em>Birth Defects Research Part A</em>, 91, 867–872.</li>
+    <li>Miao, M., Yuan, W., Yang, F., y col. (2015). Associations between Bisphenol A Exposure and Reproductive Hormones among Female Workers. <em>International Journal of Environmental Research and Public Health</em>, 12, 13240–13250.</li>
+    <li>Miller, G. Z., Pitzzu, D. T., Sargent, M. C., y Gearhart, J. (2023). Bisphenols and alternative developers in thermal paper receipts from the U.S. market assessed by FTIR spectroscopy. <em>Environmental Pollution</em>, 122232.</li>
+    <li>Minatoya, M., y Kishi, R. (2021). A Review of Recent Studies on Bisphenol A and Phthalate Exposures and Child Neurodevelopment. <em>International Journal of Environmental Research and Public Health</em>, 18.</li>
+    <li>Mínguez-Alarcón, L., Gaskins, A., Chiu, Y., y col. (2015). Urinary bisphenol A concentrations and association with in vitro fertilization outcomes. <em>Human Reproduction</em>, 30, 2120–2128.</li>
+    <li>Mínguez-Alarcón, L., Hauser, R., y Gaskins, A. (2016). Effects of bisphenol A on male and couple reproductive health: a review. <em>Fertility and Sterility</em>, 106, 864–870.</li>
+    <li>Moreno-Gómez-Toledano, R., Vélez-Vélez, E., Arenas, M. I., y col. (2022). Association between urinary concentrations of bisphenol A substitutes and diabetes in adults. <em>World Journal of Diabetes</em>, 13, 521–531.</li>
+    <li>Mustieles, V., Pérez-Lobato, R., Olea, N., y Fernández, M. F. (2015). Bisphenol A: Human exposure and neurobehavior. <em>Neurotoxicology</em>, 49, 174–184.</li>
+    <li>Namat, A., Xia, W., Xiong, C., y col. (2021). Association of BPA exposure during pregnancy with risk of preterm birth and changes in gestational age: A meta-analysis. <em>Ecotoxicology and Environmental Safety</em>, 220, 112400.</li>
+    <li>Ndaw, S., Rémy, A., Denis, F., y col. (2018). Occupational exposure of cashiers to bisphenol S via thermal paper. <em>Toxicology Letters</em>, 298, 106–111.</li>
+    <li>Ndaw, S., Rémy, A., Jargot, D., y Robert, A. (2016). Occupational exposure of cashiers to Bisphenol A via thermal paper: urinary biomonitoring study. <em>International Archives of Occupational and Environmental Health</em>, 89, 935–946.</li>
+    <li>Park, S., Jeon, J., Jeong, K., y col. (2020). The Association of Ovarian Reserve with Exposure to Bisphenol A and Phthalate in Reproductive-aged Women. <em>Journal of Korean Medical Science</em>, 36.</li>
+    <li>Pei, Z., Zhang, L., Bao, Y., y col. (2025). The negative impacts of bisphenols on thyroid function in adults. <em>Ecotoxicology and Environmental Safety</em>, 290, 117790.</li>
+    <li>Pelch, K. E., Wignall, J. A., Goldstone, A., y col. (2019). A Scoping Review of the Health and Toxicological Activity of BPA Structural Analogues and Functional Alternatives. <em>Toxicology</em>.</li>
+    <li>Perera, F., Vishnevetsky, J., Herbstman, J., y col. (2012). Prenatal Bisphenol A Exposure and Child Behavior in an Inner-City Cohort. <em>Environmental Health Perspectives</em>, 120, 1190–1194.</li>
+    <li>Peretz, J., Vrooman, L. A., Ricke, W., y col. (2014). Bisphenol A and Reproductive Health: Update of Experimental and Human Evidence, 2007–2013. <em>Environmental Health Perspectives</em>, 122, 775–786.</li>
+    <li>Pergialiotis, V., Kotrogianni, P., Christopoulos-Timogiannakis, E., y col. (2018). Bisphenol A and adverse pregnancy outcomes: a systematic review. <em>Journal of Maternal-Fetal and Neonatal Medicine</em>, 31, 3320–3327.</li>
+    <li>Prueitt, R., Hixon, M., Fan, T., y col. (2023). Systematic review of the potential carcinogenicity of bisphenol A in humans. <em>Regulatory Toxicology and Pharmacology</em>, 105414.</li>
+    <li>Rancière, F., Lyons, J., Loh, V., y col. Bisphenol A and the Risk of Cardiometabolic Disorders: A Systematic Review with Meta-analysis. <em>Environmental Health</em>.</li>
+    <li>Reale, E., Vernez, D., y Hopf, N. (2020). Skin Absorption of Bisphenol A and Its Alternatives in Thermal Paper. <em>Annals of Work Exposures and Health</em>.</li>
+    <li>Rochester, J., y Bolden, A. (2015). Bisphenol S and F: A Systematic Review and Comparison of the Hormonal Activity of Bisphenol A Substitutes. <em>Environmental Health Perspectives</em>, 123, 643–650.</li>
+    <li>Sasso, A. F., Pirow, R., Andra, S., y col. (2020). Pharmacokinetics of bisphenol A in humans following dermal administration. <em>Environment International</em>, 144, 106031.</li>
+    <li>Schönfelder, G., Wittfoht, W., Hopp, H., y col. (2002). Parent bisphenol A accumulation in the human maternal-fetal-placental unit. <em>Environmental Health Perspectives</em>, 110, A703–A707.</li>
+    <li>Shankar, A., y Teppala, S. (2011). Relationship between urinary bisphenol A levels and diabetes mellitus. <em>Journal of Clinical Endocrinology and Metabolism</em>, 96, 3822–3826.</li>
+    <li>Shen, J., Kang, Q., Mao, Y., y col. (2020). Urinary bisphenol A concentration is correlated with poorer oocyte retrieval and embryo implantation outcomes. <em>Ecotoxicology and Environmental Safety</em>, 187, 109816.</li>
+    <li>Siracusa, J., Yin, L., Measel, E., y col. (2018). Effects of bisphenol A and its analogs on reproductive health: A mini review. <em>Reproductive Toxicology</em>, 79, 96–123.</li>
+    <li>Snijder, C. A., Heederik, D., Pierik, F., y col. (2013). Fetal Growth and Prenatal Exposure to Bisphenol A: The Generation R Study. <em>Environmental Health Perspectives</em>, 121, 393–398.</li>
+    <li>Steffensen, I., Dirven, H., Couderq, S., y col. (2020). Bisphenols and Oxidative Stress Biomarkers. <em>International Journal of Environmental Research and Public Health</em>, 17.</li>
+    <li>Sugiura-Ogasawara, M., Ozaki, Y., Sonta, S., y col. (2005). Exposure to bisphenol A is associated with recurrent miscarriage. <em>Human Reproduction</em>, 20, 2325–2329.</li>
+    <li>Sun, X., Li, D., Liang, H., y col. (2018). Maternal exposure to bisphenol A and anogenital distance throughout infancy. <em>Environment International</em>, 121, 269–275.</li>
+    <li>Thayer, K., Taylor, K. W., Garantziotis, S., y col. (2015). Bisphenol A, Bisphenol S, and BPSIP in Urine and Blood of Cashiers. <em>Environmental Health Perspectives</em>, 124, 437–444.</li>
+    <li>Yang, P., Lin, B., Zhou, B., y col. (2021). Sex-specific associations of prenatal exposure to bisphenol A and its alternatives with fetal growth parameters and gestational age. <em>Environment International</em>, 146, 106305.</li>
+    <li>Zhang, N., Zhao, Y., Zhai, L., y col. (2023). Urinary bisphenol A and S are associated with diminished ovarian reserve in women from an infertility clinic in Northern China. <em>Ecotoxicology and Environmental Safety</em>, 256, 114867.</li>
+    <li>Zhu, H., Cheng, Q., Liu, J., y col. (2023). Associations among bisphenol A, its analogs, and chlorinated derivatives in placenta and risk for neural tube defects. <em>Science of the Total Environment</em>, 165586.</li>
+  </ol>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <p><strong>Campaña independiente de concientización.</strong> Esta página reúne evidencia científica revisada por pares sobre la exposición ocupacional a bisfenoles desde papel térmico. Está dirigida al personal de cajas, a sus supervisores, a quienes trabajan en recursos humanos y comités de salud ocupacional, y al público en general.</p>
+  <p>Las afirmaciones se ajustan a lo que la literatura científica permite sostener al momento de su redacción. Las referencias completas se encuentran al final del documento. Este material no sustituye consejo médico individual.</p>
+  <p>Valle de Toluca, Estado de México · Material de uso libre con atribución</p>
+</footer>
+
+</article>
 </body>
 </html>
