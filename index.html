@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alerta Ticket - Prevención BPA</title>
+  <title>El Riesgo en tus Manos - Acción contra el BPA en Toluca</title>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,600;0,700;1,400&family=Barlow+Condensed:wght@500;700&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -28,6 +28,7 @@
       max-width: 800px;
       margin: 0 auto;
       background: var(--paper);
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
     }
 
     /* ── HEADER ── */
@@ -121,7 +122,7 @@
     }
 
     @media (min-width: 600px) {
-      .stat-grid { grid-template-columns: repeat(3, 1fr); }
+      .stat-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
     .stat-block {
@@ -142,7 +143,7 @@
 
     .stat-desc { font-size: 14px; }
 
-    /* ── WARNING BOX ── */
+    /* ── WARNING BOX & BOSS BOX ── */
     .warning-box {
       background: #4a1010;
       border-left: 6px solid var(--red);
@@ -151,6 +152,21 @@
       color: #f0c0c0;
     }
     .warning-box strong { color: #ff8080; }
+
+    .boss-box {
+      background: #e9ecef;
+      border-left: 6px solid #4a5568;
+      padding: 20px;
+      margin: 25px 0;
+      color: #2d3748;
+    }
+    .boss-box h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 22px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      color: #1a202c;
+    }
 
     /* ── ACTION CARDS ── */
     .action-section {
@@ -196,9 +212,23 @@
       margin-bottom: 10px;
     }
 
-    /* ── LISTS ── */
-    ul { list-style-position: inside; margin-bottom: 20px; }
-    li { margin-bottom: 10px; font-size: 16px; }
+    /* ── REFS ── */
+    .refs-section {
+      padding: 40px 20px;
+      background: #e2dfd8;
+    }
+    .refs-section h2 { font-size: 28px; }
+    .refs-list {
+      list-style: none;
+      font-size: 11px;
+      line-height: 1.4;
+      color: #444;
+    }
+    .refs-list li {
+      margin-bottom: 10px;
+      padding-left: 15px;
+      text-indent: -15px;
+    }
 
     /* ── FOOTER ── */
     footer {
@@ -217,46 +247,47 @@
 
 <div class="container">
   <header>
-    <span class="eyebrow">⚠ Información de salud ocupacional para cajeros</span>
+    <span class="eyebrow">⚠ Alerta de Salud Ocupacional</span>
     <h1>EL <span>TICKET</span><br>TE ESTÁ<br>AFECTANDO</h1>
   </header>
 
   <div class="subtitle-bar">
-    Bisfenol A (BPA) en papel térmico
+    Riesgos Metabólicos y Hormonales del Papel Térmico
   </div>
 
   <div class="intro">
-    Los tickets que imprimes y entregas cada día están recubiertos con <strong>BPA (Bisfenol A)</strong>, un químico que entra a tu cuerpo a través de la piel con solo tocarlo. Esto está documentado por decenas de estudios científicos.
+    El manejo de recibos es una vía documentada de exposición ocupacional para los cajeros. Entra a tu cuerpo a través de la piel con solo tocarlo. Esto no es una teoría, está comprobado por biomonitoreos laborales.
   </div>
 
   <div class="section">
-    <span class="section-label">¿Qué es y qué hace el BPA?</span>
-    <h2>Un químico que imita al estrógeno</h2>
-    <p>El BPA no es tinta: es parte del recubrimiento del papel térmico. Al tocarlo, se transfiere a tu piel y penetra directamente al torrente sanguíneo, actuando como un <strong>disruptor endocrino</strong> que engaña al sistema hormonal.</p>
+    <span class="section-label">El Impacto Real en el Cuerpo</span>
+    <h2>Un químico que imita al estrógeno y daña el metabolismo</h2>
+    <p>El BPA actúa como un <strong>disruptor endocrino</strong> que engaña al sistema hormonal. Pero el daño va más allá de lo reproductivo: la evidencia humana más fuerte vincula la exposición al bisfenol con resistencia a la insulina, obesidad, adiposidad central y diabetes.</p>
+    <p>Peor aún, estudios directos en cajeros han asociado una mayor exposición dérmica al BPA con <strong>daño oxidativo en el ADN</strong>.</p>
 
     <div class="stat-grid">
       <div class="stat-block">
-        <span class="stat-num">2×</span>
-        <div class="stat-desc">Los cajeros tienen el doble o más de BPA en orina que personas en otros empleos.</div>
+        <span class="stat-num">85%</span>
+        <div class="stat-desc">De los recibos analizados en EE.UU. (2022) migraron a BPS, demostrando que la industria usa sustitutos igual de tóxicos.</div>
       </div>
       <div class="stat-block">
-        <span class="stat-num">1,000×</span>
-        <div class="stat-desc">Un solo ticket puede contener hasta 1,000 veces más BPA que una lata de comida.</div>
-      </div>
-      <div class="stat-block">
-        <span class="stat-num">80%</span>
-        <div class="stat-desc">De los tickets de grandes cadenas contienen bisfenoles (BPA o BPS).</div>
+        <span class="stat-num">0%</span>
+        <div class="stat-desc">Aumento de BPA en orina durante el turno <strong>si se usan guantes</strong>. La protección física funciona y es médicamente comprobable.</div>
       </div>
     </div>
   </div>
 
   <div class="section">
-    <span class="section-label">El engaño del "Sustituto Seguro"</span>
-    <h2>Cambiaron el BPA por algo igual de malo</h2>
-    <p>Muchas cadenas grandes ya usan <strong>BPS (Bisfenol S)</strong>, presentándolo como seguro. Sin embargo, tiene una estructura química casi idéntica, el mismo mecanismo disruptor hormonal y puede permanecer más tiempo en el cuerpo.</p>
+    <span class="section-label">Para Gerencia y RRHH</span>
+    <h2>El Engaño del "Papel Libre de BPA"</h2>
+    
+    <div class="boss-box">
+      <h3>Si te dicen: "Nuestros tickets son seguros porque no tienen BPA"</h3>
+      <p>Están equivocados. La industria reemplazó masivamente el BPA por BPS. Mecánicamente, el BPS y otros sustitutos conservan actividades hormonales similares (estrogénicas y anti-androgénicas) y no resuelven el problema de la disrupción endocrina. Proporcionar guantes de nitrilo a los cajeros u ofrecer recibos digitales son mitigaciones de bajo costo frente a un riesgo de salud ocupacional comprobado.</p>
+    </div>
 
     <div class="warning-box">
-      <p><strong>⚠ EL GEL ANTIBACTERIAL LO HACE 100 VECES PEOR.</strong><br>Usar sanitizante de manos justo antes o después de tocar tickets aumenta la absorción de BPA hasta 100 veces porque el alcohol abre los poros. Aplica gel solo después de lavarte con agua y jabón.</p>
+      <p><strong>⚠ EL GEL ANTIBACTERIAL ES UN AMPLIFICADOR.</strong><br>El uso de desinfectantes de manos altera la piel y extrae cantidades mucho mayores de bisfenoles del papel, provocando aumentos rápidos en suero y orina. Lávate con agua y jabón.</p>
     </div>
   </div>
 
@@ -268,31 +299,75 @@
       <div class="action-card">
         <span class="action-num">01</span>
         <div class="action-title">Usa guantes de nitrilo</div>
-        <p>No uses guantes de látex: no protegen contra BPA. El nitrilo es la única barrera efectiva al cambiar rollos.</p>
+        <p>Un estudio demostró que el uso de guantes eliminó por completo el aumento de BPA en la orina durante un turno laboral.</p>
       </div>
       
       <div class="action-card">
         <span class="action-num">02</span>
         <div class="action-title">Agua y Jabón</div>
-        <p>No solo uses gel. El jabón es lo único que remueve físicamente el BPA de la piel de forma efectiva.</p>
+        <p>El jabón es la única barrera real. El gel antibacterial amplifica la absorción al abrir los poros.</p>
       </div>
 
       <div class="action-card">
         <span class="action-num">03</span>
-        <div class="action-title">Manejo cuidadoso</div>
-        <p>Sostén el ticket con dos dedos. El lado impreso tiene más BPA; dóblalo hacia adentro antes de entregarlo.</p>
+        <div class="action-title">Manejo Cuidadoso</div>
+        <p>Sostén el ticket con dos dedos. Tiempos de manipulación prolongados exceden los límites teóricos de absorción de los modelos de riesgo.</p>
       </div>
 
       <div class="action-card" style="border-top-color: #4caf50;">
         <span class="action-num" style="color: #4caf50;">04</span>
-        <div class="action-title">Si estás embarazada</div>
-        <p>El BPA cruza la placenta. Tienes argumentos científicos para pedir un cambio temporal de funciones a RRHH.</p>
+        <div class="action-title">Derechos Laborales</div>
+        <p>Este sitio web contiene la base bibliográfica necesaria para sustentar un riesgo laboral real ante sindicatos y comités de salud.</p>
       </div>
     </div>
   </div>
 
+  <div class="refs-section">
+    <span class="section-label" style="color: #666; border-color: #666;">Base de Evidencia Científica</span>
+    <h2>Referencias Bibliográficas</h2>
+    <ul class="refs-list">
+      <li>Bernier, M., & Vandenberg, L. N. (2017). Handling of thermal paper: Implications for dermal exposure to bisphenol A and its alternatives. PLoS ONE, 12.</li>
+      <li>Biedermann, S., Tschudin, P., & Grob, K. (2010). Transfer of bisphenol A from thermal printer paper to the skin. Analytical and Bioanalytical Chemistry, 398, 571–576.</li>
+      <li>Bousoumah, R., et al. (2021). Biomonitoring of occupational exposure to bisphenol A, bisphenol S and bisphenol F: A systematic review. The Science of the Total Environment, 783, 146905.</li>
+      <li>Caporossi, L., & Papaleo, B. (2017). Bisphenol A and Metabolic Diseases: Challenges for Occupational Medicine. International Journal of Environmental Research and Public Health, 14.</li>
+      <li>Choi, J., et al. (2021). Urinary bisphenol concentrations and its association with metabolic disorders in the US and Korean populations. Environmental Pollution, 118679.</li>
+      <li>Delépierre, J., et al. (2023). Relation of urinary bisphenol concentration and diabetes or prediabetes in French adults: A cross-sectional study. PLOS ONE, 18.</li>
+      <li>Dias, P., et al. (2022). The effects of bisphenols on the cardiovascular system. Critical Reviews in Toxicology, 52, 66–87.</li>
+      <li>Frankowski, R., et al. (2020). The presence of bisphenol A in the thermal paper in the face of changing European regulations - A comparative global research. Environmental Pollution, 265 Pt A, 114879.</li>
+      <li>Gorini, F., et al. (2020). Bisphenols as Environmental Triggers of Thyroid Dysfunction: Clues and Evidence. International Journal of Environmental Research and Public Health, 17.</li>
+      <li>Hehn, R. S. (2016). NHANES Data Support Link between Handling of Thermal Paper Receipts and Increased Urinary Bisphenol A Excretion. Environmental Science & Technology, 50 1, 397–404.</li>
+      <li>Hormann, A. M., et al. (2014). Holding Thermal Receipt Paper and Eating Food after Using Hand Sanitizer Results in High Serum Bioactive and Urine Total Levels of Bisphenol A (BPA). PLoS ONE, 9.</li>
+      <li>Karrer, C., et al. (2018). Physiologically Based Pharmacokinetic (PBPK) Modeling of the Bisphenols BPA, BPS, BPF, and BPAF with New Experimental Metabolic Parameters. Environmental Health Perspectives, 126.</li>
+      <li>Khmiri, I., et al. (2020). Toxicokinetics of bisphenol-S and its glucuronide in plasma and urine following oral and dermal exposure in volunteers. Environment International, 138, 105644.</li>
+      <li>Kim, M. J., & Park, Y. J. (2019). Bisphenols and Thyroid Hormone. Endocrinology and Metabolism, 34, 340–348.</li>
+      <li>LaKind, J., et al. (2014). Bisphenol A and indicators of obesity, glucose metabolism/type 2 diabetes and cardiovascular disease: A systematic review. Critical Reviews in Toxicology, 44, 121–150.</li>
+      <li>Lang, I., et al. (2008). Association of urinary bisphenol A concentration with medical disorders and laboratory abnormalities in adults. JAMA, 300 11, 1303–1310.</li>
+      <li>Lee, I., et al. (2018). Bisphenol A exposure through receipt handling and its association with insulin resistance among female cashiers. Environment International, 117, 268–275.</li>
+      <li>Liu, J., & Martin, J. W. (2017). Prolonged Exposure to Bisphenol A from Single Dermal Contact Events. Environmental Science & Technology, 51 17, 9940–9949.</li>
+      <li>Lv, Y., et al. (2017). Higher dermal exposure of cashiers to BPA and its association with DNA oxidative damage. Environment International, 98, 69–74.</li>
+      <li>Melzer, D., et al. (2010). Association of Urinary Bisphenol A Concentration with Heart Disease: Evidence from NHANES 2003/06. PLoS ONE, 5.</li>
+      <li>Meslin, M., et al. (2022). Human Biomonitoring Guidance Values (HBM-GVs) for Bisphenol S and Assessment of the Risk Due to the Exposure to Bisphenols A and S, in Europe. Toxics, 10.</li>
+      <li>Miao, M., et al. (2015). Associations between Bisphenol A Exposure and Reproductive Hormones among Female Workers. International Journal of Environmental Research and Public Health, 12, 13240–13250.</li>
+      <li>Miller, G. Z., et al. (2023). Bisphenols and alternative developers in thermal paper receipts from the U.S. market assessed by fourier transform infrared spectroscopy. Environmental Pollution, 122232.</li>
+      <li>Mínguez-Alarcón, L., et al. (2016). Effects of bisphenol A on male and couple reproductive health: a review. Fertility and Sterility, 106 4, 864–870.</li>
+      <li>Moreno-Gómez-Toledano, R., et al. (2022). Association between urinary concentrations of bisphenol A substitutes and diabetes in adults. World Journal of Diabetes, 13, 521–531.</li>
+      <li>Ndaw, S., et al. (2018). Occupational exposure of cashiers to bisphenol S via thermal paper. Toxicology Letters, 298, 106–111.</li>
+      <li>Ndaw, S., et al. (2016). Occupational exposure of cashiers to Bisphenol A via thermal paper: urinary biomonitoring study. International Archives of Occupational and Environmental Health, 89, 935–946.</li>
+      <li>Pei, Z., et al. (2025). The negative impacts of bisphenols on thyroid function in adults. Ecotoxicology and Environmental Safety, 290, 117790.</li>
+      <li>Rancière, F., et al. (n.d.). Bisphenol a and the Risk of Cardiometabolic Disorders: a Systematic Review. Environmental Health.</li>
+      <li>Reale, E., et al. (2020). Skin Absorption of Bisphenol A and Its Alternatives in Thermal Paper. Annals of Work Exposures and Health.</li>
+      <li>Rochester, J., & Bolden, A. (2015). Bisphenol S and F: A Systematic Review and Comparison of the Hormonal Activity of Bisphenol A Substitutes. Environmental Health Perspectives, 123, 643–650.</li>
+      <li>Sasso, A. F., et al. (2020). Pharmacokinetics of bisphenol A in humans following dermal administration. Environment International, 144, 106031.</li>
+      <li>Shankar, A., & Teppala, S. (2011). Relationship between urinary bisphenol A levels and diabetes mellitus. The Journal of Clinical Endocrinology and Metabolism, 96 12, 3822–3826.</li>
+      <li>Siracusa, J., et al. (2018). Effects of bisphenol A and its analogs on reproductive health: A mini review. Reproductive Toxicology, 79, 96–123.</li>
+      <li>Steffensen, I., et al. (2020). Bisphenols and Oxidative Stress Biomarkers. International Journal of Environmental Research and Public Health, 17.</li>
+      <li>Thayer, K., et al. (2015). Bisphenol A, Bisphenol S, and 4-Hydroxyphenyl 4-Isoprooxyphenylsulfone (BPSIP) in Urine and Blood of Cashiers. Environmental Health Perspectives, 124, 437–444.</li>
+      <li>Wang, F., et al. (2012). High urinary bisphenol A concentrations in workers and possible laboratory abnormalities. Occupational and Environmental Medicine, 69, 679–684.</li>
+    </ul>
+  </div>
+
   <footer>
-    Campaña de divulgación científica independiente - Valle de Toluca
+    Campaña de concientización científica independiente - Valle de Toluca, Estado de México
   </footer>
 </div>
 
